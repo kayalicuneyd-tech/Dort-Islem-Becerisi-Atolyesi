@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dört İşlem Çalışma Kağıdı Stüdyosu | Cüneyd Kayalı</title>
+  <meta name="description" content="Özel Eğitim Dört İşlem Çalışma Kağıdı Stüdyosu - Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı">
+  <meta name="theme-color" content="#d97706">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Dört İşlem">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Statik Yedek Vektörel İkon (SVG Favicon) -->
+  <link id="faviconSvg" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%231e293b'/%3E%3Cstop offset='100%25' stop-color='%230f172a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23bg)'/%3E%3Crect x='28' y='28' width='456' height='456' rx='96' fill='%23FAF6EE' stroke='%23F59E0B' stroke-width='12'/%3E%3Crect x='64' y='64' width='176' height='176' rx='40' fill='%23FEF3C7' stroke='%23D97706' stroke-width='10'/%3E%3Crect x='272' y='64' width='176' height='176' rx='40' fill='%23E0F2FE' stroke='%230284C7' stroke-width='10'/%3E%3Crect x='64' y='272' width='176' height='176' rx='40' fill='%23DCFCE7' stroke='%2316A34A' stroke-width='10'/%3E%3Crect x='272' y='272' width='176' height='176' rx='40' fill='%23FFE4E6' stroke='%23E11D48' stroke-width='10'/%3E%3Ctext x='152' y='188' font-family='Arial,sans-serif' font-size='115' font-weight='900' text-anchor='middle' fill='%23B45309'%3E+%3C/text%3E%3Ctext x='360' y='182' font-family='Arial,sans-serif' font-size='125' font-weight='900' text-anchor='middle' fill='%230369A1'%3E-%3C/text%3E%3Ctext x='152' y='396' font-family='Arial,sans-serif' font-size='110' font-weight='900' text-anchor='middle' fill='%2315803D'%3E×%3C/text%3E%3Ctext x='360' y='396' font-family='Arial,sans-serif' font-size='115' font-weight='900' text-anchor='middle' fill='%23BE123C'%3E÷%3C/text%3E%3Ccircle cx='256' cy='256' r='38' fill='%23F59E0B' stroke='%23FAF6EE' stroke-width='10'/%3E%3Ctext x='256' y='269' font-family='Arial,sans-serif' font-size='38' font-weight='bold' text-anchor='middle' fill='%23FFFFFF'%3E★%3C/text%3E%3C/svg%3E">
+
+  <!-- Masaüstü (PWA) ve Tablet (iOS / Android) İçin 512x512 HD PNG İkon & Manifest Üretici -->
+  <script>
+    (function setupAppIconsAndPWA() {
+      function renderHDIcon(size) {
+        const c = document.createElement('canvas');
+        c.width = size;
+        c.height = size;
+        const ctx = c.getContext('2d');
+        const s = size / 512;
+
+        function roundRect(x, y, w, h, r) {
+          ctx.beginPath();
+          ctx.moveTo(x + r, y);
+          ctx.arcTo(x + w, y, x + w, y + h, r);
+          ctx.arcTo(x + w, y + h, x, y + h, r);
+          ctx.arcTo(x, y + h, x, y, r);
+          ctx.arcTo(x, y, x + w, y, r);
+          ctx.closePath();
+        }
+
+        // 1. Dış Gövde (Koyu Lacivert/Antrasit Modern Çerçeve)
+        const bgGrad = ctx.createLinearGradient(0, 0, size, size);
+        bgGrad.addColorStop(0, '#1e293b');
+        bgGrad.addColorStop(1, '#0f172a');
+        roundRect(0, 0, size, size, 112 * s);
+        ctx.fillStyle = bgGrad;
+        ctx.fill();
+
+        // 2. İç Papirüs/Krem Çalışma Kağıdı Zemini
+        roundRect(26 * s, 26 * s, 460 * s, 460 * s, 92 * s);
+        ctx.fillStyle = '#FAF6EE';
+        ctx.fill();
+        ctx.lineWidth = 10 * s;
+        ctx.strokeStyle = '#F59E0B';
+        ctx.stroke();
+
+        // 3. Dört İşlem Renkli Basamak Kutuları (2x2 Grid)
+        const tiles = [
+          { x: 60,  y: 60,  bg: '#FEF3C7', border: '#D97706', text: '#B45309', sym: '+', dy: 38 },
+          { x: 272, y: 60,  bg: '#E0F2FE', border: '#0284C7', text: '#0369A1', sym: '−', dy: 36 },
+          { x: 60,  y: 272, bg: '#DCFCE7', border: '#16A34A', text: '#15803D', sym: '×', dy: 38 },
+          { x: 272, y: 272, bg: '#FFE4E6', border: '#E11D48', text: '#BE123C', sym: '÷', dy: 38 }
+        ];
+
+        tiles.forEach(t => {
+          // Kutu Gölgesi
+          ctx.save();
+          ctx.shadowColor = 'rgba(15, 23, 42, 0.12)';
+          ctx.shadowBlur = 12 * s;
+          ctx.shadowOffsetY = 5 * s;
+          roundRect(t.x * s, t.y * s, 180 * s, 180 * s, 40 * s);
+          ctx.fillStyle = t.bg;
+          ctx.fill();
+          ctx.restore();
+
+          // Kutu Çerçevesi
+          roundRect(t.x * s, t.y * s, 180 * s, 180 * s, 40 * s);
+          ctx.lineWidth = 9 * s;
+          ctx.strokeStyle = t.border;
+          ctx.stroke();
+
+          // İşlem Sembolü
+          ctx.fillStyle = t.text;
+          ctx.font = '900 ' + Math.round(112 * s) + 'px system-ui, -apple-system, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(t.sym, (t.x + 90) * s, (t.y + 92) * s);
+        });
+
+        // 4. Orta Yıldız Rozeti (Özel Eğitim Pekiştireç Sembolü)
+        ctx.save();
+        ctx.shadowColor = 'rgba(15, 23, 42, 0.28)';
+        ctx.shadowBlur = 14 * s;
+        ctx.beginPath();
+        ctx.arc(256 * s, 256 * s, 42 * s, 0, Math.PI * 2);
+        ctx.fillStyle = '#D97706';
+        ctx.fill();
+        ctx.lineWidth = 9 * s;
+        ctx.strokeStyle = '#FAF6EE';
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold ' + Math.round(42 * s) + 'px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('★', 256 * s, 258 * s);
+
+        return c.toDataURL('image/png');
+      }
+
+      const icon180 = renderHDIcon(180);
+      const icon192 = renderHDIcon(192);
+      const icon512 = renderHDIcon(512);
+
+      // iPad / iPhone Ana Ekran İkonu (Apple Touch Icon)
+      const appleLink = document.createElement('link');
+      appleLink.rel = 'apple-touch-icon';
+      appleLink.sizes = '180x180';
+      appleLink.href = icon180;
+      document.head.appendChild(appleLink);
+
+      // Masaüstü PNG Favicon
+      const pngLink = document.createElement('link');
+      pngLink.rel = 'icon';
+      pngLink.type = 'image/png';
+      pngLink.sizes = '512x512';
+      pngLink.href = icon512;
+      document.head.appendChild(pngLink);
+
+      // GitHub Pages & Masaüstü/Tablet Kurulumu İçin Web App Manifest
+      const manifestData = {
+        name: "Dört İşlem Çalışma Kağıdı Stüdyosu | Cüneyd Kayalı",
+        short_name: "Dört İşlem",
+        description: "Özel Eğitim Dört İşlem Çalışma Kağıdı Stüdyosu - Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı",
+        start_url: "./",
+        scope: "./",
+        display: "standalone",
+        orientation: "any",
+        background_color: "#FAF6EE",
+        theme_color: "#d97706",
+        icons: [
+          { src: icon192, sizes: "192x192", type: "image/png", purpose: "any maskable" },
+          { src: icon512, sizes: "512x512", type: "image/png", purpose: "any maskable" }
+        ]
+      };
+      const manifestBlob = new Blob([JSON.stringify(manifestData)], { type: 'application/manifest+json' });
+      const manifestLink = document.createElement('link');
+      manifestLink.rel = 'manifest';
+      manifestLink.href = URL.createObjectURL(manifestBlob);
+      document.head.appendChild(manifestLink);
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Lexend:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --q-font-size: 26px;
+      --q-box-size: 38px;
+      --q-card-pad: 10px;
+      --q-grid-gap: 12px;
+    }
+    body {
+      font-family: 'Lexend', sans-serif;
+      background-color: #cbd5e1;
+      user-select: none;
+      margin: 0;
+      padding: 0;
+    }
+    .font-lexend { font-family: 'Lexend', sans-serif; }
+    .font-comic { font-family: 'Comic Neue', cursive, sans-serif; letter-spacing: 0.03em; }
+    .font-dyslexic { font-family: 'Nunito', sans-serif; letter-spacing: 0.08em; word-spacing: 0.14em; font-weight: 800; }
+
+    /* Ekranda Tam A4 Oranı (794px x 1123px) - Sabit ve Tam Boy */
+    .a4-sheet {
+      width: 794px;
+      height: 1123px;
+      min-width: 794px;
+      min-height: 1123px;
+      flex-shrink: 0;
+      padding: 34px 40px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.28);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      overflow: hidden;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    /* Pastel Göz Dinlendirici Zeminler */
+    .theme-papyrus { background-color: #FAF6EE; }
+    .theme-ivory { background-color: #FDFBF7; }
+    .theme-yellow { background-color: #FEF9E7; }
+    .theme-mint { background-color: #F0FAF4; }
+    .theme-blue { background-color: #F0F7FA; }
+    .theme-white { background-color: #FFFFFF; }
+
+    /* Dinamik Ölçeklenen İşlem Hücreleri */
+    .math-cell {
+      width: var(--q-box-size);
+      height: calc(var(--q-box-size) * 1.05);
+      font-size: var(--q-font-size);
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .math-inline-text {
+      font-size: var(--q-font-size);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .carry-pocket {
+      width: calc(var(--q-box-size) * 0.58);
+      height: calc(var(--q-box-size) * 0.58);
+      font-size: calc(var(--q-font-size) * 0.45);
+    }
+
+    /* Soru Izgarası ve Kartları A4 Alanının Tamamını Doldurur */
+    .q-grid {
+      width: 100%;
+      height: 100%;
+      gap: var(--q-grid-gap);
+    }
+    .q-card {
+      padding: var(--q-card-pad);
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* DEHB Tek Soru Odak Maskesi */
+    .focus-active .q-card:not(.focused-card) {
+      opacity: 0.1;
+      filter: blur(1.5px);
+      pointer-events: none;
+    }
+    .focused-card {
+      outline: 4px solid #f59e0b;
+      z-index: 20;
+      background-color: #ffffff !important;
+    }
+
+    /* Çizim Tuvali */
+    .draw-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+      pointer-events: none;
+      touch-action: none;
+    }
+    .draw-canvas.drawing-enabled {
+      pointer-events: auto;
+      cursor: crosshair;
+    }
+
+    /* Kusursuz 2 Sayfa A4 Yazdırma */
+    @media print {
+      body, html {
+        background: #FFFFFF !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      #appMainLayout, #previewColumn, #previewScrollArea, #pagesViewport {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        background: transparent !important;
+        zoom: 1 !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .a4-sheet {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-width: 210mm !important;
+        min-height: 297mm !important;
+        margin: 0 !important;
+        padding: 9mm 11mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: #FFFFFF !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .a4-sheet:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      .q-card {
+        break-inside: avoid;
+        background-color: #FFFFFF !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden text-slate-800">
+
+  <!-- ==================== 1. BAŞLANGIÇ EKRANI (MODAL) ==================== -->
+  <div id="splashModal" class="no-print fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-[#FAF6EE] border-2 border-amber-500/40 rounded-3xl max-w-xl w-full p-7 shadow-2xl">
+      <div class="flex flex-col sm:flex-row items-center gap-5">
+        <div class="w-24 h-24 rounded-3xl bg-slate-900 p-1.5 shadow-xl shrink-0">
+          <svg viewBox="0 0 512 512" class="w-full h-full">
+            <rect x="16" y="16" width="480" height="480" rx="96" fill="#FAF6EE" stroke="#F59E0B" stroke-width="14"/>
+            <rect x="56" y="56" width="180" height="180" rx="40" fill="#FEF3C7" stroke="#D97706" stroke-width="10"/>
+            <rect x="276" y="56" width="180" height="180" rx="40" fill="#E0F2FE" stroke="#0284C7" stroke-width="10"/>
+            <rect x="56" y="276" width="180" height="180" rx="40" fill="#DCFCE7" stroke="#16A34A" stroke-width="10"/>
+            <rect x="276" y="276" width="180" height="180" rx="40" fill="#FFE4E6" stroke="#E11D48" stroke-width="10"/>
+            <text x="146" y="184" font-size="115" font-weight="900" text-anchor="middle" fill="#B45309">+</text>
+            <text x="366" y="178" font-size="125" font-weight="900" text-anchor="middle" fill="#0369A1">−</text>
+            <text x="146" y="400" font-size="110" font-weight="900" text-anchor="middle" fill="#15803D">×</text>
+            <text x="366" y="400" font-size="115" font-weight="900" text-anchor="middle" fill="#BE123C">÷</text>
+            <circle cx="256" cy="256" r="42" fill="#D97706" stroke="#FAF6EE" stroke-width="10"/>
+            <text x="256" y="270" font-size="40" font-weight="bold" text-anchor="middle" fill="#FFFFFF">★</text>
+          </svg>
+        </div>
+        <div class="text-center sm:text-left space-y-1.5">
+          <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-900 font-bold text-[11px] uppercase">
+            Özel Eğitim & BEP Materyal Atölyesi
+          </span>
+          <h1 class="text-2xl font-extrabold text-slate-900 leading-tight">
+            Dört İşlem Çalışma Kağıdı Stüdyosu
+          </h1>
+          <p class="text-xs font-bold text-amber-900 bg-amber-200/70 inline-block px-3 py-1 rounded-lg border border-amber-400/50">
+            Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed pt-1">
+            53 kademeli dört işlem basamağı, A4 sayfasının tamamını dolduran dinamik ızgara motoru, aşağıya doğru uzayan uzun bölme kafesleri ve basamak kaydırmalı çarpma şablonları.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeSplash()" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm rounded-xl shadow-md transition active:scale-95">
+          Stüdyoya Dön ➔
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. ÜST KONTROL PANELİ ==================== -->
+  <header class="no-print bg-white border-b border-slate-200 z-30 shadow-sm shrink-0">
+    <!-- Üst Satır: Marka + Sayfa Başı Soru Sayısı + Ana Butonlar -->
+    <div class="px-4 py-2 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100">
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="openSplash()" title="Uygulama Bilgisi">
+        <div class="w-9 h-9 rounded-xl bg-slate-900 p-0.5 flex items-center justify-center shadow-sm">
+          <svg viewBox="0 0 512 512" class="w-full h-full">
+            <rect x="16" y="16" width="480" height="480" rx="96" fill="#FAF6EE" stroke="#F59E0B" stroke-width="18"/>
+            <rect x="56" y="56" width="180" height="180" rx="40" fill="#FEF3C7" stroke="#D97706" stroke-width="12"/>
+            <rect x="276" y="56" width="180" height="180" rx="40" fill="#E0F2FE" stroke="#0284C7" stroke-width="12"/>
+            <rect x="56" y="276" width="180" height="180" rx="40" fill="#DCFCE7" stroke="#16A34A" stroke-width="12"/>
+            <rect x="276" y="276" width="180" height="180" rx="40" fill="#FFE4E6" stroke="#E11D48" stroke-width="12"/>
+            <text x="146" y="186" font-size="120" font-weight="900" text-anchor="middle" fill="#B45309">+</text>
+            <text x="366" y="180" font-size="130" font-weight="900" text-anchor="middle" fill="#0369A1">−</text>
+            <text x="146" y="402" font-size="115" font-weight="900" text-anchor="middle" fill="#15803D">×</text>
+            <text x="366" y="402" font-size="120" font-weight="900" text-anchor="middle" fill="#BE123C">÷</text>
+          </svg>
+        </div>
+        <div>
+          <div class="text-sm font-extrabold text-slate-900 leading-none">Dört İşlem Becerisi Stüdyosu</div>
+          <div class="text-[11px] font-bold text-amber-700 mt-0.5">Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı</div>
+        </div>
+      </div>
+
+      <!-- Orta: Sayfa Başı Soru Sayısı -->
+      <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+        <span class="text-[11px] font-extrabold text-slate-600 px-2">Sayfa Başı Soru:</span>
+        <button onclick="setQuestionCount(4)" id="qCnt-4" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">4 <span class="text-[10px] font-normal text-slate-400">(8)</span></button>
+        <button onclick="setQuestionCount(6)" id="qCnt-6" class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-amber-500 text-white shadow-sm">6 <span class="text-[10px] font-normal text-amber-100">(12)</span></button>
+        <button onclick="setQuestionCount(8)" id="qCnt-8" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">8 <span class="text-[10px] font-normal text-slate-400">(16)</span></button>
+        <button onclick="setQuestionCount(9)" id="qCnt-9" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">9 <span class="text-[10px] font-normal text-slate-400">(18)</span></button>
+        <button onclick="setQuestionCount(12)" id="qCnt-12" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">12 <span class="text-[10px] font-normal text-slate-400">(24)</span></button>
+        <button onclick="setQuestionCount(16)" id="qCnt-16" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">16 <span class="text-[10px] font-normal text-slate-400">(32)</span></button>
+        <button onclick="setQuestionCount(20)" id="qCnt-20" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50">20 <span class="text-[10px] font-normal text-slate-400">(40)</span></button>
+      </div>
+
+      <!-- Sağ: Yeni Üret & Yazdır -->
+      <div class="flex items-center gap-2">
+        <button onclick="generateWorksheet()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold shadow-sm transition active:scale-95">
+          🔄 Soruları Yenile
+        </button>
+        <button onclick="window.print()" class="px-4 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-sm transition active:scale-95">
+          🖨️ 2 Sayfa Yazdır / PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Alt Şerit: İşlem Yönü, Soru Biçimi, Punto Büyütücü, Font, Zemin ve Kalem -->
+    <div class="px-4 py-1.5 bg-slate-50 flex flex-wrap items-center justify-between gap-2 text-xs">
+      <div class="flex items-center flex-wrap gap-2">
+        <div class="flex items-center bg-white border border-slate-300 rounded-lg p-0.5">
+          <button onclick="setLayoutDirection('vertical')" id="dirBtn-vertical" class="px-2.5 py-1 rounded-md font-bold bg-amber-500 text-white">⬇️ Alt Alta</button>
+          <button onclick="setLayoutDirection('horizontal')" id="dirBtn-horizontal" class="px-2.5 py-1 rounded-md font-semibold text-slate-600 hover:text-slate-900">➡️ Yan Yana</button>
+          <button onclick="setLayoutDirection('classic_div')" id="dirBtn-classic_div" class="px-2.5 py-1 rounded-md font-semibold text-slate-600 hover:text-slate-900">|― Uzun Bölme Kafesi</button>
+        </div>
+
+        <div class="flex items-center bg-white border border-slate-300 rounded-lg p-0.5">
+          <button onclick="setQuestionForm('standard')" id="formBtn-standard" class="px-2 py-1 rounded-md font-bold bg-slate-800 text-white">Sonucu Bul</button>
+          <button onclick="setQuestionForm('missing_second')" id="formBtn-missing_second" class="px-2 py-1 rounded-md font-semibold text-slate-600">12 + □ = 18</button>
+          <button onclick="setQuestionForm('missing_first')" id="formBtn-missing_first" class="px-2 py-1 rounded-md font-semibold text-slate-600">□ + 6 = 18</button>
+          <button onclick="setQuestionForm('missing_mixed')" id="formBtn-missing_mixed" class="px-2 py-1 rounded-md font-semibold text-slate-600">Karışık □</button>
+        </div>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-2">
+        <div class="flex items-center bg-white border border-slate-300 rounded-lg p-0.5">
+          <span class="text-[11px] font-bold text-slate-500 px-1.5">Kutu/Punto:</span>
+          <button onclick="manualScale(-2)" class="w-6 h-6 bg-slate-100 hover:bg-amber-100 rounded font-extrabold text-xs" title="Küçült">A-</button>
+          <span id="fontSizeDisplay" class="px-2 text-[11px] font-extrabold text-amber-800 min-w-[40px] text-center">26px</span>
+          <button onclick="manualScale(2)" class="w-6 h-6 bg-slate-100 hover:bg-amber-100 rounded font-extrabold text-xs" title="Büyüt">A+</button>
+          <button onclick="computeAndApplyOptimalScale()" class="ml-1 px-2 py-0.5 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded font-bold text-[10px]" title="A4 Sayfasına Tam Oturt">📐 Tam Doldur</button>
+        </div>
+
+        <select id="fontFamilySelect" onchange="changeFontFamily(this.value)" class="text-[11px] font-bold bg-white border border-slate-300 rounded-lg px-2 py-1 focus:outline-none">
+          <option value="font-lexend">Lexend (Okunaklı)</option>
+          <option value="font-dyslexic">Disleksi Dostu</option>
+          <option value="font-comic">El Yazısı</option>
+        </select>
+
+        <div class="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1">
+          <button onclick="setSheetTheme('theme-papyrus')" class="w-4 h-4 rounded-full bg-[#FAF6EE] border border-slate-400" title="Papirüs"></button>
+          <button onclick="setSheetTheme('theme-yellow')" class="w-4 h-4 rounded-full bg-[#FEF9E7] border border-slate-400" title="Pastel Sarı"></button>
+          <button onclick="setSheetTheme('theme-mint')" class="w-4 h-4 rounded-full bg-[#F0FAF4] border border-slate-400" title="Pastel Nane"></button>
+          <button onclick="setSheetTheme('theme-blue')" class="w-4 h-4 rounded-full bg-[#F0F7FA] border border-slate-400" title="Pastel Mavi"></button>
+          <button onclick="setSheetTheme('theme-white')" class="w-4 h-4 rounded-full bg-white border border-slate-400" title="Saf Beyaz"></button>
+        </div>
+
+        <button id="btnToggleDraw" onclick="toggleDrawingMode()" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100">
+          ✏️ Kalem
+        </button>
+        <button id="btnClearCanvas" onclick="clearAllCanvases()" class="hidden px-2 py-1 bg-rose-50 border border-rose-200 text-rose-700 rounded-lg font-bold">
+          Sil
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 3. ANA GÖVDE ==================== -->
+  <div id="appMainLayout" class="flex-1 flex flex-row overflow-hidden">
+
+    <!-- ==================== SOL PANEL (3 ADIMLI SADE YAPI) ==================== -->
+    <aside class="no-print w-[360px] xl:w-[390px] bg-white border-r border-slate-200 flex flex-col shrink-0 overflow-hidden">
+      <div class="flex-1 overflow-y-auto p-4 space-y-5 text-xs">
+
+        <!-- 1. BÖLÜM: İŞLEM TÜRÜ SEÇİMİ -->
+        <div class="space-y-2">
+          <div class="font-extrabold uppercase tracking-wider text-slate-400 text-[10px]">1. İşlem Türü Seçin</div>
+          <div class="grid grid-cols-5 gap-1.5">
+            <button onclick="selectOperation('add')" id="opBtn-add" class="p-2.5 rounded-xl border-2 border-amber-500 bg-amber-50 text-amber-900 font-extrabold flex flex-col items-center shadow-sm">
+              <span class="text-lg leading-none">+</span>
+              <span class="text-[10px] mt-1">Topla</span>
+            </button>
+            <button onclick="selectOperation('sub')" id="opBtn-sub" class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-bold flex flex-col items-center hover:bg-white">
+              <span class="text-lg leading-none">-</span>
+              <span class="text-[10px] mt-1">Çıkar</span>
+            </button>
+            <button onclick="selectOperation('mul')" id="opBtn-mul" class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-bold flex flex-col items-center hover:bg-white">
+              <span class="text-lg leading-none">×</span>
+              <span class="text-[10px] mt-1">Çarp</span>
+            </button>
+            <button onclick="selectOperation('div')" id="opBtn-div" class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-bold flex flex-col items-center hover:bg-white">
+              <span class="text-lg leading-none">÷</span>
+              <span class="text-[10px] mt-1">Böl</span>
+            </button>
+            <button onclick="selectOperation('mix')" id="opBtn-mix" class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-bold flex flex-col items-center hover:bg-white">
+              <span class="text-lg leading-none">±</span>
+              <span class="text-[10px] mt-1">Karışık</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. BÖLÜM: İŞLEM BASAMAĞI LİSTESİ -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-extrabold uppercase tracking-wider text-slate-400 text-[10px]">2. İşlem Basamağı (Kazanım)</span>
+            <span id="levelCountBadge" class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">16 Basamak</span>
+          </div>
+
+          <div class="relative">
+            <input type="text" id="searchLevelInput" oninput="renderLevelCards(this.value)" placeholder="🔍 Basamak ara (örn: eldesiz, sıfırdan bozma)..." class="w-full pl-7 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:bg-white focus:border-amber-500 font-medium">
+            <span class="absolute left-2.5 top-2 text-slate-400 text-[11px]">🔎</span>
+          </div>
+
+          <div id="mulTablesPillBox" class="hidden p-2.5 bg-amber-50/70 rounded-xl border border-amber-200 space-y-1.5">
+            <div class="font-bold text-amber-900 text-[11px]">Sorulacak Çarpanlar:</div>
+            <div id="mulTablesPills" class="flex flex-wrap gap-1"></div>
+          </div>
+
+          <div id="levelCardsContainer" class="space-y-1.5 max-h-60 overflow-y-auto pr-1"></div>
+        </div>
+
+        <!-- 3. BÖLÜM: ÖZEL EĞİTİM DESTEKLERİ -->
+        <div class="space-y-2 pt-2 border-t border-slate-100">
+          <div class="font-extrabold uppercase tracking-wider text-slate-400 text-[10px]">3. Özel Eğitim ve Görsel Destekler</div>
+
+          <div class="space-y-1.5">
+            <button onclick="cycleGridStyle()" id="scaf-grid" class="w-full px-3 py-2 rounded-xl border-2 border-amber-500 bg-amber-50/60 flex items-center justify-between font-bold text-amber-950 transition">
+              <span>🔲 Basamak Kutusu Kılavuzu</span>
+              <span id="lbl-grid" class="text-[10px] bg-amber-200 px-2 py-0.5 rounded-md font-extrabold">Renkli Y-O-B</span>
+            </button>
+
+            <button onclick="toggleScaffold('carryPockets')" id="scaf-carry" class="w-full px-3 py-2 rounded-xl border-2 border-amber-500 bg-amber-50/60 flex items-center justify-between font-bold text-amber-950 transition">
+              <span>⭕ Elde ve Onluk Bozma Yuvaları</span>
+              <span id="lbl-carry" class="text-[10px] bg-amber-200 px-2 py-0.5 rounded-md font-extrabold">Açık</span>
+            </button>
+
+            <button onclick="toggleScaffold('touchMath')" id="scaf-touch" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between font-semibold text-slate-700 transition">
+              <span>⚀ TouchMath Sayma Noktaları</span>
+              <span id="lbl-touch" class="text-[10px] bg-slate-200 px-2 py-0.5 rounded-md">Kapalı</span>
+            </button>
+
+            <button onclick="toggleScaffold('modelFirst')" id="scaf-model" class="w-full px-3 py-2 rounded-xl border-2 border-amber-500 bg-amber-50/60 flex items-center justify-between font-bold text-amber-950 transition">
+              <span>⭐ 1. Soru Çözümlü Örnek Olsun</span>
+              <span id="lbl-model" class="text-[10px] bg-amber-200 px-2 py-0.5 rounded-md font-extrabold">Açık</span>
+            </button>
+
+            <button onclick="cycleTopStrip()" id="scaf-strip" class="w-full px-3 py-2 rounded-xl border-2 border-amber-500 bg-amber-50/60 flex items-center justify-between font-bold text-amber-950 transition">
+              <span>📏 Sayfa Üstü Sayı Doğrusu</span>
+              <span id="lbl-strip" class="text-[10px] bg-amber-200 px-2 py-0.5 rounded-md font-extrabold">0-20 Doğru</span>
+            </button>
+
+            <button onclick="toggleScaffold('showAnswersOnScreen')" id="scaf-ans" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between font-semibold text-slate-700 transition">
+              <span>👁️ Tüm Cevapları Göster (Kontrol)</span>
+              <span id="lbl-ans" class="text-[10px] bg-slate-200 px-2 py-0.5 rounded-md">Kapalı</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. BÖLÜM: BAŞLIK, PROFİL VE SAYI SINIRI -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+          <button onclick="document.getElementById('extraSettingsBox').classList.toggle('hidden')" class="w-full px-3 py-2.5 flex justify-between items-center font-bold text-slate-700 hover:bg-slate-100">
+            <span>⚙️ Başlık, Öğrenci Profili & Sayı Sınırı</span>
+            <span class="text-[10px]">▼</span>
+          </button>
+          <div id="extraSettingsBox" class="hidden p-3 space-y-3 bg-white border-t border-slate-200">
+            <div>
+              <label class="block font-bold text-slate-600 mb-1">Çalışma Başlığı</label>
+              <input type="text" id="worksheetTitleInput" value="Dört İşlem Becerisi Çalışma Yaprağı" oninput="updateHeaderTitles()" class="w-full p-1.5 border border-slate-300 rounded-lg font-semibold">
+            </div>
+            <div class="space-y-1.5 pt-1 border-t border-slate-100">
+              <label class="block font-bold text-slate-600">Öğrenci BEP Profili Kaydet / Yükle</label>
+              <div class="flex gap-1">
+                <input type="text" id="profileNameInput" placeholder="Öğrenci Adı" class="flex-1 p-1.5 border border-slate-300 rounded-lg font-semibold">
+                <button onclick="saveStudentProfile()" class="px-3 py-1 bg-amber-600 text-white font-bold rounded-lg">Kaydet</button>
+              </div>
+              <select id="savedProfilesSelect" onchange="loadStudentProfile(this.value)" class="w-full p-1.5 border border-slate-300 rounded-lg bg-slate-50 font-semibold">
+                <option value="">-- Kayıtlı Profil Seç --</option>
+              </select>
+            </div>
+            <div class="space-y-1.5 pt-1 border-t border-slate-100">
+              <label class="flex items-center justify-between font-bold text-slate-700 cursor-pointer">
+                <span>Özel Sayı Sınırı (Min - Max)</span>
+                <input type="checkbox" id="chkCustomRange" onchange="generateWorksheet()" class="w-4 h-4 accent-amber-600">
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <input type="number" id="customMin" value="1" min="0" max="9999" onchange="generateWorksheet()" class="p-1.5 border rounded-lg font-bold" placeholder="Min">
+                <input type="number" id="customMax" value="20" min="1" max="9999" onchange="generateWorksheet()" class="p-1.5 border rounded-lg font-bold" placeholder="Max">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ==================== SAĞ SÜTUN: ÖNİZLEME ÇUBUĞU + 2 SAYFA A4 ==================== -->
+    <div id="previewColumn" class="flex-1 flex flex-col overflow-hidden bg-slate-700">
+
+      <!-- Önizleme Kontrol Çubuğu -->
+      <div class="no-print bg-slate-800 text-slate-200 px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs border-b border-slate-900 shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-amber-400">📄 Canlı Kağıt Önizleme:</span>
+          <button onclick="setPageViewMode('side')" id="viewBtn-side" class="px-2.5 py-1 rounded-lg font-bold bg-amber-500 text-slate-950 transition">📖 Yan Yana 2 Sayfa</button>
+          <button onclick="setPageViewMode('stack')" id="viewBtn-stack" class="px-2.5 py-1 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-slate-200 transition">📄 Alt Alta Büyük</button>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <span class="text-slate-400 font-semibold">Ekran Yakınlaştırma:</span>
+          <button onclick="changePreviewZoom(-0.1)" class="w-7 h-7 rounded-lg bg-slate-700 hover:bg-slate-600 font-extrabold text-sm">-</button>
+          <span id="zoomLevelText" class="min-w-[46px] text-center font-extrabold text-amber-400">%75</span>
+          <button onclick="changePreviewZoom(0.1)" class="w-7 h-7 rounded-lg bg-slate-700 hover:bg-slate-600 font-extrabold text-sm">+</button>
+          <button onclick="autoFitPreviewZoom()" class="ml-1 px-2.5 py-1 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold text-[11px]">Ekrana Oturt</button>
+          <button onclick="setPreviewZoom(1)" class="px-2.5 py-1 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold text-[11px]">%100</button>
+        </div>
+      </div>
+
+      <!-- Kaydırılabilir Kağıt Alanı -->
+      <main id="previewScrollArea" class="flex-1 overflow-auto p-6">
+        <div id="pagesViewport" class="flex flex-row flex-wrap justify-center items-start gap-8 mx-auto" style="zoom: 0.72;">
+
+          <!-- ==================== SAYFA 1 ==================== -->
+          <div id="a4Page1" class="a4-sheet theme-papyrus font-lexend border border-slate-400">
+            <canvas id="canvasP1" class="draw-canvas"></canvas>
+
+            <!-- Üst: Antre + Sayı Doğrusu -->
+            <div id="p1HeaderBlock" class="shrink-0">
+              <div class="border-b-2 border-slate-800 pb-2 mb-2">
+                <div class="flex justify-between items-start gap-4">
+                  <div>
+                    <h1 id="outTitleP1" contenteditable="true" class="text-lg font-extrabold text-slate-900 tracking-tight outline-none">
+                      Dört İşlem Becerisi Çalışma Yaprağı
+                    </h1>
+                    <p id="outBepGoalP1" contenteditable="true" class="text-[11px] font-semibold text-amber-900/90 italic outline-none">
+                      K.D.A: İki basamaklı doğal sayılarla eldesiz toplama işlemi yapar.
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-end shrink-0">
+                    <span class="text-[9px] font-extrabold uppercase tracking-wider bg-slate-800 text-white px-2 py-0.5 rounded">SAYFA 1 / 2</span>
+                    <div class="flex gap-0.5 text-base text-slate-300 select-none mt-0.5">
+                      <span onclick="this.classList.toggle('text-amber-400')" class="cursor-pointer">★</span>
+                      <span onclick="this.classList.toggle('text-amber-400')" class="cursor-pointer">★</span>
+                      <span onclick="this.classList.toggle('text-amber-400')" class="cursor-pointer">★</span>
+                      <span onclick="this.classList.toggle('text-amber-400')" class="cursor-pointer">★</span>
+                      <span onclick="this.classList.toggle('text-amber-400')" class="cursor-pointer">★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 text-[11px] font-bold text-slate-700 pt-1.5 mt-1 border-t border-dashed border-slate-300">
+                  <div id="studentNameP1" contenteditable="true" class="outline-none">Öğrenci Adı: _____________________</div>
+                  <div contenteditable="true" class="text-center outline-none">Sınıf / Grup: __________</div>
+                  <div contenteditable="true" class="text-right outline-none">Tarih: ___ / ___ / 2026</div>
+                </div>
+              </div>
+
+              <div id="topGuideStripP1" class="mb-2 px-3 py-1.5 bg-white/90 rounded-xl border border-slate-300 shadow-sm"></div>
+            </div>
+
+            <!-- Orta: 1. Sayfa Soruları (A4 Sayfasının Tamamını Doldurur) -->
+            <div class="flex-1 w-full overflow-hidden py-0.5">
+              <div id="questionsGridP1" class="q-grid grid"></div>
+            </div>
+
+            <!-- Alt: 1. Sayfa Alt Bilgisi -->
+            <div id="p1FooterBlock" class="shrink-0 border-t border-slate-400 pt-1.5 mt-2 flex justify-between items-center text-[10px] text-slate-600">
+              <span>Dört İşlem Becerisi Çalışma Yaprağı • Sayfa 1 (2. Sayfaya Devam Ediniz ➔)</span>
+              <span class="font-extrabold text-slate-800">Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı</span>
+            </div>
+          </div>
+
+          <!-- ==================== SAYFA 2 (ETKİNLİĞİN DEVAMI) ==================== -->
+          <div id="a4Page2" class="a4-sheet theme-papyrus font-lexend border border-slate-400">
+            <canvas id="canvasP2" class="draw-canvas"></canvas>
+
+            <!-- Üst: 2. Sayfa Kompakt Devam Başlığı + Sayı Doğrusu -->
+            <div id="p2HeaderBlock" class="shrink-0">
+              <div class="border-b-2 border-slate-800 pb-2 mb-2 flex justify-between items-center">
+                <div>
+                  <h2 id="outTitleP2" contenteditable="true" class="text-base font-extrabold text-slate-900 outline-none">
+                    Dört İşlem Becerisi Çalışma Yaprağı (Devamı)
+                  </h2>
+                  <p id="outBepGoalP2" class="text-[11px] font-semibold text-amber-900/90 italic"></p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span id="studentNameP2" class="text-xs font-bold text-slate-700">Öğrenci: _________________</span>
+                  <span class="text-[9px] font-extrabold uppercase tracking-wider bg-amber-600 text-white px-2 py-0.5 rounded">SAYFA 2 / 2</span>
+                </div>
+              </div>
+
+              <div id="topGuideStripP2" class="mb-2 px-3 py-1.5 bg-white/90 rounded-xl border border-slate-300 shadow-sm"></div>
+            </div>
+
+            <!-- Orta: 2. Sayfa Soruları (A4 Sayfasının Tamamını Doldurur) -->
+            <div class="flex-1 w-full overflow-hidden py-0.5">
+              <div id="questionsGridP2" class="q-grid grid"></div>
+            </div>
+
+            <!-- Alt: BEP Gözlem Çizelgesi + Öz Değerlendirme + Cüneyd Kayalı İmzası -->
+            <div id="p2FooterBlock" class="shrink-0 border-t-2 border-slate-800 pt-2 mt-2 text-[10px] space-y-1">
+              <div class="flex flex-wrap justify-between items-center gap-2 bg-white/85 px-2.5 py-1 rounded-lg border border-slate-300">
+                <div>
+                  <span class="font-extrabold text-slate-800 mr-1.5">BEP İpucu Düzeyi:</span>
+                  <label class="mr-2"><input type="checkbox" class="mr-1 align-middle">Bağımsız (+)</label>
+                  <label class="mr-2"><input type="checkbox" class="mr-1 align-middle">Sözel (Sİ)</label>
+                  <label class="mr-2"><input type="checkbox" class="mr-1 align-middle">İşaret (İİ)</label>
+                  <label class="mr-2"><input type="checkbox" class="mr-1 align-middle">Model (M)</label>
+                  <label><input type="checkbox" class="mr-1 align-middle">Fiziksel (FY)</label>
+                </div>
+                <div class="flex items-center gap-1.5 font-bold text-slate-700">
+                  <span>Öz-Değerlendirme:</span>
+                  <span class="px-1.5 py-0.5 rounded border border-slate-200 bg-white">😊 Kolaydı</span>
+                  <span class="px-1.5 py-0.5 rounded border border-slate-200 bg-white">😐 Çalıştım</span>
+                  <span class="px-1.5 py-0.5 rounded border border-slate-200 bg-white">🤝 Yardım Aldım</span>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-[10px] text-slate-600 px-1">
+                <span>Dört İşlem Becerisi Çalışma Yaprağı • Sayfa 2 / 2</span>
+                <span class="font-extrabold text-slate-800">Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+  <!-- ==================== 4. JAVASCRIPT MOTORU ==================== -->
+  <script>
+    /********************************************************************
+     * 1. 53 DÖRT İŞLEM KAZANIM BASAMAĞI VERİTABANI
+     ********************************************************************/
+    const OPERATION_LEVELS = {
+      add: [
+        { id: 'add_visual_10', label: '1. Nesneli / Şekilli Toplama (Toplam ≤ 10)', bep: 'K.D.A: Nesne gruplarını sayarak toplamı 10’a kadar olan toplama işlemlerini yapar.' },
+        { id: 'add_1d_nocarry', label: '2. 1 Basamaklı + 1 Basamaklı (Eldesiz / Toplam ≤ 9)', bep: 'K.D.A: Bir basamaklı doğal sayılarla toplamı 9’u geçmeyen eldesiz toplama işlemi yapar.' },
+        { id: 'add_friends10', label: '3. 10’u Tamamlayan Sayılar (10’un Dostları: 6+4=10)', bep: 'K.D.A: Toplamı 10 olan iki doğal sayıyı eşleştirir ve toplar.' },
+        { id: 'add_1d_carry', label: '4. 1 Basamaklı + 1 Basamaklı (Eldeli / Toplam 11-18)', bep: 'K.D.A: Bir basamaklı iki doğal sayıyı 10’un üzerine sayarak toplar.' },
+        { id: 'add_tens', label: '5. 10’un Katları İle Toplama (20 + 30)', bep: 'K.D.A: Onun katı olan iki basamaklı doğal sayılarla zihinden toplama işlemi yapar.' },
+        { id: 'add_2d1d_u20', label: '6. 2 Basamaklı (10-19) + 1 Basamaklı (20 İçinde Eldesiz)', bep: 'K.D.A: 20 içinde iki basamaklı bir sayı ile bir basamaklı sayıyı eldesiz toplar.' },
+        { id: 'add_2d1d_nocarry', label: '7. 2 Basamaklı + 1 Basamaklı (Eldesiz - Genel)', bep: 'K.D.A: İki basamaklı doğal sayı ile bir basamaklı doğal sayıyı eldesiz toplar.' },
+        { id: 'add_2d1d_carry', label: '8. 2 Basamaklı + 1 Basamaklı (Eldeli)', bep: 'K.D.A: İki basamaklı doğal sayı ile bir basamaklı doğal sayıyı eldeli toplar.' },
+        { id: 'add_2d2d_nocarry', label: '9. 2 Basamaklı + 2 Basamaklı (Eldesiz)', bep: 'K.D.A: İki basamaklı iki doğal sayıyı eldesiz olarak toplar.' },
+        { id: 'add_2d2d_carry_u100', label: '10. 2 Basamaklı + 2 Basamaklı (Eldeli - Sonuç < 100)', bep: 'K.D.A: Toplamı 100’ü geçmeyen iki basamaklı doğal sayılarla eldeli toplama yapar.' },
+        { id: 'add_2d2d_carry_o100', label: '11. 2 Basamaklı + 2 Basamaklı (Çift Eldeli - Sonuç ≥ 100)', bep: 'K.D.A: İki basamaklı doğal sayılarla toplamı üç basamaklı olan eldeli toplama yapar.' },
+        { id: 'add_3d_nocarry', label: '12. 3 Basamaklı + 3 Basamaklı (Eldesiz)', bep: 'K.D.A: Üç basamaklı doğal sayılarla eldesiz toplama işlemi yapar.' },
+        { id: 'add_3d_carry_ones', label: '13. 3 Basamaklı + 3 Basamaklı (Sadece Birler Eldeli)', bep: 'K.D.A: Üç basamaklı doğal sayılarla birler basamağı eldeli toplama işlemi yapar.' },
+        { id: 'add_3d_carry_all', label: '14. 3 Basamaklı + 3 Basamaklı (Çoklu Eldeli)', bep: 'K.D.A: Üç basamaklı doğal sayılarla eldeli toplama işlemi yapar.' },
+        { id: 'add_4d_carry', label: '15. 4 Basamaklı Sayılarla Toplama (Eldesiz & Eldeli)', bep: 'K.D.A: Dört basamaklı doğal sayılarla toplama işlemi yapar.' },
+        { id: 'add_3terms', label: '16. Üç Terimli Toplama İşlemi (A + B + C)', bep: 'K.D.A: Üç doğal sayıyı alt alta veya yan yana toplar.' }
+      ],
+      sub: [
+        { id: 'sub_visual_10', label: '1. Nesne Eksiltmeli Görsel Çıkarma (10 İçinde)', bep: 'K.D.A: Nesne grubundan belirtilen sayıda nesneyi eksilterek kalanı bulur.' },
+        { id: 'sub_1d', label: '2. 1 Basamaklı - 1 Basamaklı (Onluk Bozmasız)', bep: 'K.D.A: Bir basamaklı doğal sayılarla çıkarma işlemi yapar.' },
+        { id: 'sub_from10', label: '3. 10’dan Bir Sayı Çıkarma (10 - 4)', bep: 'K.D.A: 10 sayısından bir basamaklı doğal sayıyı çıkarır.' },
+        { id: 'sub_teen_noborrow', label: '4. 2 Basamaklı (11-19) - 1 Basamaklı (Onluk Bozmasız)', bep: 'K.D.A: 11-19 arasındaki sayılardan bir basamaklı sayıyı onluk bozmadan çıkarır.' },
+        { id: 'sub_teen_borrow', label: '5. 2 Basamaklı (11-19) - 1 Basamaklı (Onluk Bozmalı / 14-6)', bep: 'K.D.A: 20 içinde geriye sayarak onluk bozmalı çıkarma işlemi yapar.' },
+        { id: 'sub_tens', label: '6. 10’un Katları İle Çıkarma (80 - 30)', bep: 'K.D.A: Onun katı olan iki basamaklı doğal sayılarla çıkarma işlemi yapar.' },
+        { id: 'sub_2d1d_noborrow', label: '7. 2 Basamaklı - 1 Basamaklı (Onluk Bozmasız)', bep: 'K.D.A: İki basamaklı sayıdan bir basamaklı sayıyı onluk bozmadan çıkarır.' },
+        { id: 'sub_2d1d_borrow', label: '8. 2 Basamaklı - 1 Basamaklı (Onluk Bozmalı)', bep: 'K.D.A: İki basamaklı sayıdan bir basamaklı sayıyı onluk bozarak çıkarır.' },
+        { id: 'sub_2d2d_noborrow', label: '9. 2 Basamaklı - 2 Basamaklı (Onluk Bozmasız)', bep: 'K.D.A: İki basamaklı doğal sayılarla onluk bozmadan çıkarma işlemi yapar.' },
+        { id: 'sub_2d2d_borrow', label: '10. 2 Basamaklı - 2 Basamaklı (Onluk Bozmalı)', bep: 'K.D.A: İki basamaklı doğal sayılarla onluk bozarak çıkarma işlemi yapar.' },
+        { id: 'sub_zero_2d', label: '11. Sonu Sıfırlı 2 Basamaklıdan Çıkarma (60 - 27)', bep: 'K.D.A: Birler basamağı sıfır olan iki basamaklı sayıdan onluk bozarak çıkarma yapar.' },
+        { id: 'sub_3d_noborrow', label: '12. 3 Basamaklı - 3 Basamaklı (Onluk Bozmasız)', bep: 'K.D.A: Üç basamaklı doğal sayılarla onluk bozmadan çıkarma işlemi yapar.' },
+        { id: 'sub_3d_borrow', label: '13. 3 Basamaklı - 3 Basamaklı (Onluk ve Yüzlük Bozmalı)', bep: 'K.D.A: Üç basamaklı doğal sayılarla onluk/yüzlük bozarak çıkarma işlemi yapar.' },
+        { id: 'sub_3d_zero_mid', label: '14. Ortası Sıfırlı Sayıdan Çıkarma (405 - 168)', bep: 'K.D.A: Onlar basamağında sıfır bulunan üç basamaklı sayılarda çıkarma işlemi yapar.' },
+        { id: 'sub_3d_zero_double', label: '15. Çift Sıfırlı Yüzlükten Çıkarma (600 - 247)', bep: 'K.D.A: Son iki basamağı sıfır olan üç basamaklı sayılardan ardışık bozarak çıkarma yapar.' },
+        { id: 'sub_4d', label: '16. 4 Basamaklı Sayılarla Çıkarma İşlemi', bep: 'K.D.A: Dört basamaklı doğal sayılarla çıkarma işlemi yapar.' }
+      ],
+      mul: [
+        { id: 'mul_repeated', label: '1. Tekrarlı Toplamadan Çarpmaya Geçiş (4+4+4 = 3×4)', bep: 'K.D.A: Tekrarlı toplama işlemini çarpma işlemi olarak ifade eder ve sonucu bulur.' },
+        { id: 'mul_table', label: '2. Çarpım Tablosu Alıştırmaları (1 Basamak × 1 Basamak)', bep: 'K.D.A: Çarpım tablosu kurallarını kullanarak bir basamaklı sayıları çarpar.' },
+        { id: 'mul_2d1d_nocarry', label: '3. 2 Basamaklı × 1 Basamaklı (Eldesiz)', bep: 'K.D.A: İki basamaklı doğal sayı ile bir basamaklı doğal sayıyı eldesiz çarpar.' },
+        { id: 'mul_2d1d_carry', label: '4. 2 Basamaklı × 1 Basamaklı (Eldeli)', bep: 'K.D.A: İki basamaklı doğal sayı ile bir basamaklı doğal sayıyı eldeli çarpar.' },
+        { id: 'mul_3d1d_nocarry', label: '5. 3 Basamaklı × 1 Basamaklı (Eldesiz)', bep: 'K.D.A: Üç basamaklı doğal sayı ile bir basamaklı sayıyı eldesiz çarpar.' },
+        { id: 'mul_3d1d_carry', label: '6. 3 Basamaklı × 1 Basamaklı (Eldeli)', bep: 'K.D.A: Üç basamaklı doğal sayı ile bir basamaklı sayıyı eldeli çarpar.' },
+        { id: 'mul_2d2d', label: '7. 2 Basamaklı × 2 Basamaklı (Basamak Kaydırma Kutulu)', bep: 'K.D.A: İki basamaklı iki doğal sayıyı basamak kaydırarak çarpar.' },
+        { id: 'mul_3d2d', label: '8. 3 Basamaklı × 2 Basamaklı (Basamak Kaydırma Kutulu)', bep: 'K.D.A: Üç basamaklı sayı ile iki basamaklı sayıyı çarpar.' },
+        { id: 'mul_short10', label: '9. 10, 100 ve 1000 İle Kısa Yoldan Çarpma', bep: 'K.D.A: Doğal sayıları 10 ve 100 ile kısa yoldan çarpar.' }
+      ],
+      div: [
+        { id: 'div_table_exact', label: '1. Çarpım Tablosu Tersi Kalansız Bölme (18 ÷ 3)', bep: 'K.D.A: Çarpım tablosu kapsamında kalansız bölme işlemlerini yapar.' },
+        { id: 'div_2d1d_tens_exact', label: '2. 2 Basamaklı ÷ 1 Basamaklı (Onlar Tam Bölünen: 48÷2)', bep: 'K.D.A: İki basamaklı sayıyı bir basamaklı sayıya kalansız böler.' },
+        { id: 'div_2d1d_carry_exact', label: '3. 2 Basamaklı ÷ 1 Basamaklı (Onlardan Artanlı Kalansız: 52÷4)', bep: 'K.D.A: İki basamaklı sayıyı bir basamaklı sayıya kalansız olarak böler.' },
+        { id: 'div_2d1d_rem', label: '4. 2 Basamaklı ÷ 1 Basamaklı (Kalanlı Bölme: 29÷4)', bep: 'K.D.A: İki basamaklı sayıyı bir basamaklı sayıya kalanlı olarak böler.' },
+        { id: 'div_3d1d_exact', label: '5. 3 Basamaklı ÷ 1 Basamaklı (Kalansız Bölme)', bep: 'K.D.A: Üç basamaklı doğal sayıyı bir basamaklı sayıya kalansız böler.' },
+        { id: 'div_3d1d_rem', label: '6. 3 Basamaklı ÷ 1 Basamaklı (Kalanlı Bölme)', bep: 'K.D.A: Üç basamaklı doğal sayıyı bir basamaklı sayıya kalanlı böler.' },
+        { id: 'div_zero_quotient', label: '7. Bölümde Sıfır Olan Özel Bölme (312÷3=104 / 640÷8=80)', bep: 'K.D.A: Bölümünde sıfır bulunan üç basamaklı bölme işlemlerini kuralına uygun yapar.' },
+        { id: 'div_3d2d_exact', label: '8. 3 Basamaklı ÷ 2 Basamaklı (Kalansız Bölme)', bep: 'K.D.A: Üç basamaklı doğal sayıyı iki basamaklı doğal sayıya böler.' },
+        { id: 'div_short10', label: '9. 10 ve 100 İle Kısa Yoldan Bölme (450 ÷ 10)', bep: 'K.D.A: Sonu sıfırlı doğal sayıları 10 ve 100’e kısa yoldan böler.' }
+      ],
+      mix: [
+        { id: 'mix_add_sub_20', label: '1. 20 İçinde Karışık Toplama ve Çıkarma', bep: 'K.D.A: İşlem sembolüne dikkat ederek 20 içinde toplama ve çıkarma işlemlerini yapar.' },
+        { id: 'mix_add_sub_2d', label: '2. 2 Basamaklı Karışık Toplama ve Çıkarma', bep: 'K.D.A: İki basamaklı sayılarla karışık toplama ve çıkarma işlemlerini yapar.' },
+        { id: 'mix_all_basic', label: '3. Dört İşlem Karma Tarama (+, -, ×, ÷)', bep: 'K.D.A: Dört işlem sembollerini ayırt ederek temel işlemleri çözer.' }
+      ]
+    };
+
+    // Soru Sayısına Göre Tam A4 Izgara Yapılandırması (Sütun x Satır)
+    const GRID_LAYOUT_MAP = {
+      4:  { cols: 2, rows: 2, pad: 12, gap: 14 },
+      6:  { cols: 2, rows: 3, pad: 10, gap: 12 },
+      8:  { cols: 2, rows: 4, pad: 8,  gap: 10 },
+      9:  { cols: 3, rows: 3, pad: 9,  gap: 10 },
+      12: { cols: 3, rows: 4, pad: 7,  gap: 8  },
+      16: { cols: 4, rows: 4, pad: 6,  gap: 7  },
+      20: { cols: 4, rows: 5, pad: 5,  gap: 6  }
+    };
+
+    const state = {
+      currentOp: 'add',
+      selectedSubId: 'add_2d2d_nocarry',
+      perPageCount: 6,
+      layoutDirection: 'vertical',
+      questionForm: 'standard',
+      fontSize: 28,
+      boxSize: 42,
+      cardPad: 10,
+      gridGap: 12,
+      gridStyle: 'colored',
+      carryPockets: true,
+      touchMath: false,
+      modelFirst: true,
+      topStripMode: 'nl20',
+      showAnswersOnScreen: false,
+      activeMulTables: [2, 3, 4, 5],
+      focusedCardId: null,
+      drawingMode: false,
+      previewZoom: 0.75,
+      pageViewMode: 'side',
+      questions: []
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initMulTablePills();
+      selectLevelCard(state.selectedSubId, false);
+      updateTopStrip();
+      refreshSavedProfilesDropdown();
+      generateWorksheet();
+      autoFitPreviewZoom();
+      initDrawingCanvases();
+      window.addEventListener('resize', autoFitPreviewZoom);
+    });
+
+    function closeSplash() {
+      const m = document.getElementById('splashModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+    function openSplash() {
+      const m = document.getElementById('splashModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    /********************************************************************
+     * 2. CANLI ÖNİZLEME YAKINLAŞTIRMA (ZOOM) VE GÖRÜNÜM KONTROLÜ
+     ********************************************************************/
+    function setPageViewMode(mode) {
+      state.pageViewMode = mode;
+      const vp = document.getElementById('pagesViewport');
+      if (mode === 'side') {
+        vp.className = "flex flex-row flex-wrap justify-center items-start gap-8 mx-auto";
+        document.getElementById('viewBtn-side').className = "px-2.5 py-1 rounded-lg font-bold bg-amber-500 text-slate-950 transition";
+        document.getElementById('viewBtn-stack').className = "px-2.5 py-1 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-slate-200 transition";
+      } else {
+        vp.className = "flex flex-col items-center gap-8 mx-auto";
+        document.getElementById('viewBtn-stack').className = "px-2.5 py-1 rounded-lg font-bold bg-amber-500 text-slate-950 transition";
+        document.getElementById('viewBtn-side').className = "px-2.5 py-1 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-slate-200 transition";
+      }
+      autoFitPreviewZoom();
+    }
+
+    function setPreviewZoom(z) {
+      state.previewZoom = Math.min(1.15, Math.max(0.4, Number(z.toFixed(2))));
+      document.getElementById('pagesViewport').style.zoom = state.previewZoom;
+      document.getElementById('zoomLevelText').innerText = '%' + Math.round(state.previewZoom * 100);
+    }
+
+    function changePreviewZoom(delta) {
+      setPreviewZoom(state.previewZoom + delta);
+    }
+
+    function autoFitPreviewZoom() {
+      const scrollArea = document.getElementById('previewScrollArea');
+      if (!scrollArea) return;
+      const availW = scrollArea.clientWidth - 48;
+      if (state.pageViewMode === 'side' && availW > 900) {
+        setPreviewZoom(Math.min(0.85, Math.max(0.45, availW / 1640)));
+      } else {
+        setPreviewZoom(Math.min(0.95, Math.max(0.5, availW / 820)));
+      }
+    }
+
+    /********************************************************************
+     * 3. TAM A4 ALANINI DOLDURAN DİNAMİK ÖLÇEK MOTORU (100% FULL PAGE)
+     ********************************************************************/
+    function getVerticalUnitsNeeded() {
+      if (state.layoutDirection === 'horizontal' || state.questionForm !== 'standard') {
+        return 2.4;
+      }
+      if (state.currentOp === 'div' && state.layoutDirection === 'classic_div') {
+        const is3Digit = ['div_3d1d_exact', 'div_3d1d_rem', 'div_zero_quotient', 'div_3d2d_exact'].includes(state.selectedSubId);
+        const is1Step = ['div_table_exact', 'div_short10'].includes(state.selectedSubId);
+        if (is3Digit) return 7.4;
+        if (is1Step) return 4.6;
+        return 6.0;
+      }
+      if (state.currentOp === 'mul' && (state.selectedSubId === 'mul_2d2d' || state.selectedSubId === 'mul_3d2d')) {
+        return (state.carryPockets ? 7.2 : 6.4);
+      }
+      if (state.selectedSubId === 'add_3terms') {
+        return (state.carryPockets ? 5.6 : 4.8);
+      }
+      return (state.carryPockets ? 4.6 : 3.9);
+    }
+
+    function getHorizontalUnitsNeeded() {
+      if (state.currentOp === 'div' && state.layoutDirection === 'classic_div') {
+        return 6.8;
+      }
+      if (state.layoutDirection === 'horizontal' || state.questionForm !== 'standard') {
+        return 7.5;
+      }
+      return 5.5;
+    }
+
+    function computeAndApplyOptimalScale() {
+      const cfg = GRID_LAYOUT_MAP[state.perPageCount] || GRID_LAYOUT_MAP[6];
+      state.cardPad = cfg.pad;
+      state.gridGap = cfg.gap;
+
+      const h1 = document.getElementById('p1HeaderBlock').offsetHeight || 130;
+      const f1 = document.getElementById('p1FooterBlock').offsetHeight || 32;
+      const availGridH = 1123 - 68 - h1 - f1 - 8;
+      const availGridW = 794 - 80;
+
+      const rowH = (availGridH - (cfg.rows - 1) * state.gridGap) / cfg.rows;
+      const colW = (availGridW - (cfg.cols - 1) * state.gridGap) / cfg.cols;
+
+      const innerCardH = rowH - (state.cardPad * 2) - 24;
+      const innerCardW = colW - (state.cardPad * 2) - 12;
+
+      const vUnits = getVerticalUnitsNeeded();
+      const hUnits = getHorizontalUnitsNeeded();
+
+      const maxBoxByH = Math.floor(innerCardH / vUnits);
+      const maxBoxByW = Math.floor(innerCardW / hUnits);
+
+      state.boxSize = Math.max(18, Math.min(64, maxBoxByH, maxBoxByW));
+      state.fontSize = Math.max(13, Math.round(state.boxSize * 0.68));
+
+      syncScaleCssVars();
+    }
+
+    function syncScaleCssVars() {
+      document.documentElement.style.setProperty('--q-font-size', state.fontSize + 'px');
+      document.documentElement.style.setProperty('--q-box-size', state.boxSize + 'px');
+      document.documentElement.style.setProperty('--q-card-pad', state.cardPad + 'px');
+      document.documentElement.style.setProperty('--q-grid-gap', state.gridGap + 'px');
+      document.getElementById('fontSizeDisplay').innerText = state.fontSize + 'px';
+    }
+
+    function manualScale(delta) {
+      state.fontSize = Math.min(48, Math.max(12, state.fontSize + delta));
+      state.boxSize = Math.round(state.fontSize * 1.46);
+      syncScaleCssVars();
+    }
+
+    /********************************************************************
+     * 4. ÜST BAR VE SOL PANEL ETKİLEŞİMLERİ
+     ********************************************************************/
+    function setQuestionCount(cnt) {
+      state.perPageCount = cnt;
+      [4, 6, 8, 9, 12, 16, 20].forEach(n => {
+        const btn = document.getElementById(`qCnt-${n}`);
+        if (n === cnt) {
+          btn.className = "px-2.5 py-1 rounded-lg text-xs font-extrabold bg-amber-500 text-white shadow-sm";
+          btn.innerHTML = `${n} <span class="text-[10px] font-normal text-amber-100">(${n * 2})</span>`;
+        } else {
+          btn.className = "px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-700 hover:bg-amber-50";
+          btn.innerHTML = `${n} <span class="text-[10px] font-normal text-slate-400">(${n * 2})</span>`;
+        }
+      });
+      generateWorksheet();
+    }
+
+    function setLayoutDirection(dir) {
+      state.layoutDirection = dir;
+      ['vertical', 'horizontal', 'classic_div'].forEach(d => {
+        document.getElementById(`dirBtn-${d}`).className = d === dir
+          ? 'px-2.5 py-1 rounded-md font-bold bg-amber-500 text-white'
+          : 'px-2.5 py-1 rounded-md font-semibold text-slate-600 hover:text-slate-900';
+      });
+      computeAndApplyOptimalScale();
+      renderWorksheet();
+    }
+
+    function setQuestionForm(form) {
+      state.questionForm = form;
+      ['standard', 'missing_second', 'missing_first', 'missing_mixed'].forEach(f => {
+        document.getElementById(`formBtn-${f}`).className = f === form
+          ? 'px-2 py-1 rounded-md font-bold bg-slate-800 text-white'
+          : 'px-2 py-1 rounded-md font-semibold text-slate-600';
+      });
+      computeAndApplyOptimalScale();
+      renderWorksheet();
+    }
+
+    function selectOperation(op) {
+      state.currentOp = op;
+      ['add', 'sub', 'mul', 'div', 'mix'].forEach(k => {
+        const syms = { add: '+', sub: '-', mul: '×', div: '÷', mix: '±' };
+        const names = { add: 'Topla', sub: 'Çıkar', mul: 'Çarp', div: 'Böl', mix: 'Karışık' };
+        const btn = document.getElementById(`opBtn-${k}`);
+        btn.className = k === op
+          ? 'p-2.5 rounded-xl border-2 border-amber-500 bg-amber-50 text-amber-900 font-extrabold flex flex-col items-center shadow-sm'
+          : 'p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-bold flex flex-col items-center hover:bg-white';
+        btn.innerHTML = `<span class="text-lg leading-none">${syms[k]}</span><span class="text-[10px] mt-1">${names[k]}</span>`;
+      });
+
+      document.getElementById('mulTablesPillBox').classList.toggle('hidden', op !== 'mul');
+      if (op === 'div') state.layoutDirection = 'classic_div';
+      else if (state.layoutDirection === 'classic_div') state.layoutDirection = 'vertical';
+
+      ['vertical', 'horizontal', 'classic_div'].forEach(d => {
+        document.getElementById(`dirBtn-${d}`).className = d === state.layoutDirection
+          ? 'px-2.5 py-1 rounded-md font-bold bg-amber-500 text-white'
+          : 'px-2.5 py-1 rounded-md font-semibold text-slate-600 hover:text-slate-900';
+      });
+
+      state.selectedSubId = OPERATION_LEVELS[op][0].id;
+      updateBepGoalText(OPERATION_LEVELS[op][0].bep);
+      renderLevelCards();
+      generateWorksheet();
+    }
+
+    function renderLevelCards(searchText = '') {
+      const container = document.getElementById('levelCardsContainer');
+      const q = searchText.trim().toLowerCase();
+      let list = [];
+
+      if (q.length > 0) {
+        Object.keys(OPERATION_LEVELS).forEach(opKey => {
+          OPERATION_LEVELS[opKey].forEach(item => {
+            if (item.label.toLowerCase().includes(q) || item.bep.toLowerCase().includes(q)) {
+              list.push({ ...item, opKey });
+            }
+          });
+        });
+      } else {
+        list = (OPERATION_LEVELS[state.currentOp] || []).map(item => ({ ...item, opKey: state.currentOp }));
+      }
+
+      document.getElementById('levelCountBadge').innerText = `${list.length} Basamak`;
+      container.innerHTML = list.map(item => {
+        const active = item.id === state.selectedSubId;
+        return `
+          <div onclick="selectLevelCard('${item.id}', true, '${item.opKey}')" class="p-2.5 rounded-xl border cursor-pointer transition ${active ? 'border-2 border-amber-500 bg-amber-50 font-bold text-amber-950 shadow-sm' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'}">
+            <div class="text-xs leading-snug">${item.label}</div>
+            <div class="text-[10px] text-slate-500 italic mt-0.5">${item.bep}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectLevelCard(id, regen = true, opKey = null) {
+      if (opKey && opKey !== state.currentOp) {
+        state.currentOp = opKey;
+        if (opKey === 'div') state.layoutDirection = 'classic_div';
+      }
+      state.selectedSubId = id;
+      const found = (OPERATION_LEVELS[state.currentOp] || []).find(x => x.id === id);
+      if (found) updateBepGoalText(found.bep);
+      renderLevelCards(document.getElementById('searchLevelInput').value);
+      if (regen) generateWorksheet();
+    }
+
+    function initMulTablePills() {
+      const box = document.getElementById('mulTablesPills');
+      box.innerHTML = [1,2,3,4,5,6,7,8,9,10].map(n => {
+        const on = state.activeMulTables.includes(n);
+        return `<button onclick="toggleMulTable(${n})" class="px-2 py-1 rounded-lg text-[11px] font-bold border ${on ? 'border-amber-600 bg-amber-500 text-white' : 'border-amber-300 bg-white text-amber-900'}">${n}'ler</button>`;
+      }).join('');
+    }
+
+    function toggleMulTable(n) {
+      if (state.activeMulTables.includes(n)) {
+        if (state.activeMulTables.length > 1) state.activeMulTables = state.activeMulTables.filter(x => x !== n);
+      } else {
+        state.activeMulTables.push(n);
+      }
+      initMulTablePills();
+      generateWorksheet();
+    }
+
+    function cycleGridStyle() {
+      const order = ['colored', 'plain', 'none'];
+      state.gridStyle = order[(order.indexOf(state.gridStyle) + 1) % order.length];
+      syncScaffoldButtons();
+      renderWorksheet();
+    }
+
+    function cycleTopStrip() {
+      const order = ['nl20', 'nl10', 'none'];
+      state.topStripMode = order[(order.indexOf(state.topStripMode) + 1) % order.length];
+      syncScaffoldButtons();
+      updateTopStrip();
+      computeAndApplyOptimalScale();
+      renderWorksheet();
+    }
+
+    function toggleScaffold(key) {
+      state[key] = !state[key];
+      syncScaffoldButtons();
+      computeAndApplyOptimalScale();
+      renderWorksheet();
+    }
+
+    function syncScaffoldButtons() {
+      const gMap = { colored: 'Renkli Y-O-B', plain: 'Sade Kutu', none: 'Kapalı' };
+      setSwitchStyle('scaf-grid', 'lbl-grid', state.gridStyle !== 'none', gMap[state.gridStyle]);
+      setSwitchStyle('scaf-carry', 'lbl-carry', state.carryPockets, state.carryPockets ? 'Açık' : 'Kapalı');
+      setSwitchStyle('scaf-touch', 'lbl-touch', state.touchMath, state.touchMath ? 'Açık' : 'Kapalı');
+      setSwitchStyle('scaf-model', 'lbl-model', state.modelFirst, state.modelFirst ? 'Açık' : 'Kapalı');
+      const sMap = { nl20: '0-20 Doğru', nl10: '0-10 Doğru', none: 'Gizli' };
+      setSwitchStyle('scaf-strip', 'lbl-strip', state.topStripMode !== 'none', sMap[state.topStripMode]);
+      setSwitchStyle('scaf-ans', 'lbl-ans', state.showAnswersOnScreen, state.showAnswersOnScreen ? 'Açık' : 'Kapalı');
+    }
+
+    function setSwitchStyle(btnId, lblId, isOn, text) {
+      const btn = document.getElementById(btnId);
+      const lbl = document.getElementById(lblId);
+      btn.className = isOn
+        ? 'w-full px-3 py-2 rounded-xl border-2 border-amber-500 bg-amber-50/60 flex items-center justify-between font-bold text-amber-950 transition'
+        : 'w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between font-semibold text-slate-700 transition';
+      lbl.className = isOn
+        ? 'text-[10px] bg-amber-200 px-2 py-0.5 rounded-md font-extrabold'
+        : 'text-[10px] bg-slate-200 px-2 py-0.5 rounded-md';
+      lbl.innerText = text;
+    }
+
+    function updateBepGoalText(txt) {
+      document.getElementById('outBepGoalP1').innerText = txt;
+      document.getElementById('outBepGoalP2').innerText = txt;
+    }
+
+    function updateHeaderTitles() {
+      const val = document.getElementById('worksheetTitleInput').value;
+      document.getElementById('outTitleP1').innerText = val;
+      document.getElementById('outTitleP2').innerText = val + ' (Devamı)';
+    }
+
+    function changeFontFamily(cls) {
+      ['a4Page1', 'a4Page2'].forEach(id => {
+        const el = document.getElementById(id);
+        el.classList.remove('font-lexend', 'font-comic', 'font-dyslexic');
+        el.classList.add(cls);
+      });
+    }
+
+    function setSheetTheme(cls) {
+      ['a4Page1', 'a4Page2'].forEach(id => {
+        const el = document.getElementById(id);
+        el.classList.remove('theme-papyrus', 'theme-ivory', 'theme-yellow', 'theme-mint', 'theme-blue', 'theme-white');
+        el.classList.add(cls);
+      });
+    }
+
+    function updateTopStrip() {
+      ['topGuideStripP1', 'topGuideStripP2'].forEach(id => {
+        const box = document.getElementById(id);
+        if (state.topStripMode === 'none') {
+          box.classList.add('hidden');
+          return;
+        }
+        box.classList.remove('hidden');
+        const max = state.topStripMode === 'nl10' ? 10 : 20;
+        let ticks = '';
+        for (let i = 0; i <= max; i++) {
+          ticks += `<div class="flex flex-col items-center"><div class="h-1.5 w-0.5 ${i%5===0?'bg-amber-700 h-2.5':'bg-slate-400'}"></div><span class="text-[10px] font-extrabold ${i%5===0?'text-amber-800':'text-slate-700'}">${i}</span></div>`;
+        }
+        box.innerHTML = `<div class="flex items-center gap-2"><span class="text-[9px] font-extrabold uppercase text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded shrink-0">Sayı Doğrusu</span><div class="flex-1 flex justify-between border-t-2 border-slate-700 pt-0.5 px-1">${ticks}</div></div>`;
+      });
+    }
+
+    /********************************************************************
+     * 5. DÖRT İŞLEM SORU ÜRETİM MOTORU VE UZUN BÖLME ADIM HESAPLAYICI
+     ********************************************************************/
+    function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    function generateSingleOperationQuestion(index) {
+      let op = state.currentOp;
+      let subId = state.selectedSubId;
+
+      if (op === 'mix') {
+        if (subId === 'mix_add_sub_20') { op = Math.random() < 0.5 ? 'add' : 'sub'; subId = op === 'add' ? 'add_2d1d_u20' : 'sub_teen_borrow'; }
+        else if (subId === 'mix_add_sub_2d') { op = Math.random() < 0.5 ? 'add' : 'sub'; subId = op === 'add' ? 'add_2d2d_carry_u100' : 'sub_2d2d_borrow'; }
+        else { const ops = ['add','sub','mul','div']; op = ops[index % 4]; subId = {add:'add_2d2d_nocarry',sub:'sub_2d2d_noborrow',mul:'mul_table',div:'div_table_exact'}[op]; }
+      }
+
+      let a = 0, b = 0, c = null, ans = 0, rem = 0, symbol = '+';
+
+      if (document.getElementById('chkCustomRange').checked) {
+        const cMin = parseInt(document.getElementById('customMin').value) || 1;
+        const cMax = parseInt(document.getElementById('customMax').value) || 20;
+        a = rand(cMin, cMax); b = rand(cMin, cMax);
+        if (op === 'sub' && a < b) [a, b] = [b, a];
+        if (op === 'div') { b = rand(Math.max(1, cMin), Math.min(10, cMax)); ans = rand(1, 10); a = b * ans; }
+        symbol = {add:'+',sub:'-',mul:'×',div:'÷'}[op];
+        ans = op==='add'?a+b : op==='sub'?a-b : op==='mul'?a*b : Math.floor(a/b);
+        return { index, op, subId, a, b, c, ans, rem: op==='div'?a%b:0, symbol };
+      }
+
+      if (op === 'add') {
+        symbol = '+';
+        switch (subId) {
+          case 'add_visual_10': a = rand(1, 5); b = rand(1, 5); break;
+          case 'add_1d_nocarry': a = rand(1, 8); b = rand(1, 9 - a); break;
+          case 'add_friends10': a = rand(1, 9); b = 10 - a; break;
+          case 'add_1d_carry': a = rand(3, 9); b = rand(11 - a, 9); break;
+          case 'add_tens': a = rand(1, 5) * 10; b = rand(1, 9 - (a / 10)) * 10; break;
+          case 'add_2d1d_u20': a = rand(10, 17); b = rand(1, 19 - a); break;
+          case 'add_2d1d_nocarry': a = rand(20, 97); b = rand(1, 9 - (a % 10)); break;
+          case 'add_2d1d_carry': a = rand(12, 89); if (a % 10 < 2) a += 3; b = rand(10 - (a % 10), 9); break;
+          case 'add_2d2d_nocarry': { const a1=rand(1,7), a0=rand(0,8); a=a1*10+a0; b=rand(1,9-a1)*10+rand(1,9-a0); break; }
+          case 'add_2d2d_carry_u100': { const a1=rand(1,6), a0=rand(3,9); a=a1*10+a0; b=rand(1,8-a1)*10+rand(10-a0,9); break; }
+          case 'add_2d2d_carry_o100': { const a1=rand(5,9), a0=rand(4,9); a=a1*10+a0; b=rand(10-a1,9)*10+rand(10-a0,9); break; }
+          case 'add_3d_nocarry': { const h=rand(1,6), t=rand(0,7), o=rand(0,7); a=h*100+t*10+o; b=rand(1,9-h)*100+rand(1,9-t)*10+rand(1,9-o); break; }
+          case 'add_3d_carry_ones': { const h=rand(1,6), t=rand(0,7), o=rand(3,9); a=h*100+t*10+o; b=rand(1,9-h)*100+rand(0,8-t)*10+rand(10-o,9); break; }
+          case 'add_3d_carry_all': a = rand(145, 689); b = rand(156, 489); break;
+          case 'add_4d_carry': a = rand(1200, 6500); b = rand(1100, 3400); break;
+          case 'add_3terms': a = rand(4, 25); b = rand(3, 25); c = rand(2, 20); break;
+        }
+        ans = a + b + (c || 0);
+      } else if (op === 'sub') {
+        symbol = '-';
+        switch (subId) {
+          case 'sub_visual_10': a = rand(3, 10); b = rand(1, a - 1); break;
+          case 'sub_1d': a = rand(2, 9); b = rand(1, a); break;
+          case 'sub_from10': a = 10; b = rand(1, 9); break;
+          case 'sub_teen_noborrow': { const o=rand(2,9); a=10+o; b=rand(1,o); break; }
+          case 'sub_teen_borrow': { const o=rand(1,7); a=10+o; b=rand(o+1,9); break; }
+          case 'sub_tens': { const t=rand(3,9); a=t*10; b=rand(1,t-1)*10; break; }
+          case 'sub_2d1d_noborrow': { const t=rand(2,9), o=rand(2,9); a=t*10+o; b=rand(1,o); break; }
+          case 'sub_2d1d_borrow': { const t=rand(2,9), o=rand(0,7); a=t*10+o; b=rand(o+1,9); break; }
+          case 'sub_2d2d_noborrow': { const t=rand(3,9), o=rand(2,9); a=t*10+o; b=rand(1,t-1)*10+rand(1,o); break; }
+          case 'sub_2d2d_borrow': { const t=rand(3,9), o=rand(0,7); a=t*10+o; b=rand(1,t-1)*10+rand(o+1,9); break; }
+          case 'sub_zero_2d': { const t=rand(3,9); a=t*10; b=rand(11,a-5); if(b%10===0) b+=3; break; }
+          case 'sub_3d_noborrow': { const h=rand(3,9), t=rand(2,9), o=rand(2,9); a=h*100+t*10+o; b=rand(1,h-1)*100+rand(1,t)*10+rand(1,o); break; }
+          case 'sub_3d_borrow': { const h=rand(4,9), t=rand(1,6), o=rand(1,6); a=h*100+t*10+o; b=rand(1,h-2)*100+rand(t+1,9)*10+rand(o+1,9); break; }
+          case 'sub_3d_zero_mid': { const h=rand(3,9), o=rand(1,7); a=h*100+o; b=rand(1,h-1)*100+rand(2,8)*10+rand(o+1,9); break; }
+          case 'sub_3d_zero_double': { const h=rand(3,9); a=h*100; b=rand(1,h-1)*100+rand(2,8)*10+rand(2,9); break; }
+          case 'sub_4d': a = rand(3000, 9500); b = rand(1100, a - 500); break;
+        }
+        ans = a - b;
+      } else if (op === 'mul') {
+        symbol = '×';
+        const tbl = state.activeMulTables[rand(0, state.activeMulTables.length - 1)] || 2;
+        switch (subId) {
+          case 'mul_repeated': a = rand(2, 5); b = tbl; break;
+          case 'mul_table': a = rand(1, 10); b = tbl; break;
+          case 'mul_2d1d_nocarry': { b = rand(2, 4); const m = Math.floor(9 / b); a = rand(1, m) * 10 + rand(1, m); break; }
+          case 'mul_2d1d_carry': a = rand(14, 89); b = tbl; break;
+          case 'mul_3d1d_nocarry': b = rand(2, 3); a = rand(1, 3) * 100 + rand(1, 3) * 10 + rand(1, 3); break;
+          case 'mul_3d1d_carry': a = rand(125, 489); b = rand(3, 8); break;
+          case 'mul_2d2d': a = rand(12, 68); b = rand(12, 45); break;
+          case 'mul_3d2d': a = rand(115, 395); b = rand(12, 36); break;
+          case 'mul_short10': a = rand(2, 85); b = [10, 100, 1000][rand(0, 2)]; break;
+        }
+        ans = a * b;
+      } else if (op === 'div') {
+        symbol = '÷';
+        switch (subId) {
+          case 'div_table_exact': b = rand(2, 9); ans = rand(2, 9); a = b * ans; break;
+          case 'div_2d1d_tens_exact': b = rand(2, 4); ans = rand(1, Math.floor(9/b))*10 + rand(1, Math.floor(9/b)); a = b * ans; break;
+          case 'div_2d1d_carry_exact': b = rand(3, 8); ans = rand(12, Math.floor(98/b)); if (Math.floor((b*ans)/10) % b === 0) ans += 1; a = b * ans; break;
+          case 'div_2d1d_rem': b = rand(3, 8); ans = rand(11, Math.floor(90/b)); rem = rand(1, b - 1); a = b * ans + rem; break;
+          case 'div_3d1d_exact': b = rand(2, 7); ans = rand(32, Math.floor(950/b)); a = b * ans; break;
+          case 'div_3d1d_rem': b = rand(3, 8); ans = rand(32, Math.floor(900/b)); rem = rand(1, b - 1); a = b * ans + rem; break;
+          case 'div_zero_quotient': b = rand(2, 8); ans = Math.random() < 0.5 ? (rand(1,9)*100 + rand(1,9)) : (rand(1,9)*100 + rand(1,9)*10); a = b * ans; break;
+          case 'div_3d2d_exact': b = rand(11, 24); ans = rand(12, Math.floor(950/b)); a = b * ans; break;
+          case 'div_short10': b = Math.random() < 0.6 ? 10 : 100; ans = rand(3, 75); a = b * ans; break;
+        }
+      }
+      return { index, op, subId, a, b, c, ans, rem, symbol };
+    }
+
+    function computeLongDivisionSteps(dividend, divisor) {
+      const s = String(dividend);
+      const totalCols = s.length;
+      const steps = [];
+      let idx = 0;
+      let current = 0;
+
+      while (idx < totalCols) {
+        current = current * 10 + parseInt(s[idx]);
+        idx++;
+        if (current >= divisor || idx === totalCols) break;
+      }
+
+      let endCol = idx - 1;
+      const qDigit1 = Math.floor(current / divisor);
+      const subVal1 = qDigit1 * divisor;
+      let remVal = current - subVal1;
+
+      steps.push({
+        bringStr: null,
+        subStr: String(subVal1),
+        endCol: endCol,
+        remAfter: remVal
+      });
+
+      while (idx < totalCols) {
+        const nextDigit = parseInt(s[idx]);
+        const broughtNumber = remVal * 10 + nextDigit;
+        const bringDisplay = (remVal > 0 ? String(remVal) : '0') + String(nextDigit);
+        const qDigit = Math.floor(broughtNumber / divisor);
+        const subVal = qDigit * divisor;
+        remVal = broughtNumber - subVal;
+
+        steps.push({
+          bringStr: bringDisplay,
+          subStr: String(subVal),
+          endCol: idx,
+          remAfter: remVal
+        });
+        idx++;
+      }
+
+      return { totalCols, steps, finalRem: remVal };
+    }
+
+    function getTouchDotsHtml(digitStr) {
+      if (!state.touchMath) return '';
+      const d = parseInt(digitStr);
+      if (isNaN(d) || d <= 0) return '';
+      return `<div class="flex flex-wrap gap-0.5 justify-center max-w-[16px] ml-0.5">${Array(d).fill('<span class="w-1 h-1 rounded-full bg-amber-600 inline-block"></span>').join('')}</div>`;
+    }
+
+    function getCellStyle(colFromRight) {
+      if (state.gridStyle === 'none') return 'border border-dashed border-slate-300 bg-white/60 rounded';
+      if (state.gridStyle === 'plain') return 'border border-slate-400 bg-white rounded';
+      return [
+        'border-2 border-emerald-400 bg-emerald-50/50 rounded',
+        'border-2 border-sky-400 bg-sky-50/50 rounded',
+        'border-2 border-rose-400 bg-rose-50/50 rounded',
+        'border-2 border-amber-400 bg-amber-50/50 rounded'
+      ][colFromRight % 4];
+    }
+
+    function renderClassicDivisionCage(q, showAnswer) {
+      const divInfo = computeLongDivisionSteps(q.a, q.b);
+      const totalCols = divInfo.totalCols;
+      const aDigits = String(q.a).split('');
+      const bDigits = String(q.b).split('');
+      const qDigits = String(q.ans).split('');
+
+      const buildAlignedRow = (strVal, endCol, isStudentFill, hasMinusSign = false, hasBottomBorder = false) => {
+        const len = strVal.length;
+        const startCol = Math.max(0, endCol - len + 1);
+        let cells = '';
+        for (let c = 0; c < totalCols; c++) {
+          const colFromRight = totalCols - 1 - c;
+          if (c >= startCol && c <= endCol) {
+            const ch = strVal[c - startCol];
+            cells += `<div contenteditable="true" class="math-cell ${getCellStyle(colFromRight)} ${isStudentFill ? 'text-amber-700 font-extrabold' : 'text-slate-900'}">${isStudentFill ? (showAnswer ? ch : '') : ch}</div>`;
+          } else {
+            cells += `<div class="math-cell opacity-0 pointer-events-none"></div>`;
+          }
+        }
+        return `
+          <div class="relative flex items-center gap-1 ${hasBottomBorder ? 'border-b-2 border-slate-800 pb-1 mb-1' : 'my-0.5'}">
+            ${hasMinusSign ? `<span class="math-inline-text text-amber-800 font-extrabold w-4 text-center">-</span>` : `<span class="w-4"></span>`}
+            <div class="flex items-center gap-1">${cells}</div>
+          </div>`;
+      };
+
+      const dividendHtml = `
+        <div class="flex items-center gap-1 mb-0.5">
+          <span class="w-4"></span>
+          <div class="flex items-center gap-1">
+            ${aDigits.map((d, c) => `<div contenteditable="true" class="math-cell ${getCellStyle(totalCols - 1 - c)} text-slate-900">${d}</div>`).join('')}
+          </div>
+        </div>`;
+
+      let stepsHtml = '';
+      divInfo.steps.forEach((st) => {
+        if (st.bringStr !== null) {
+          stepsHtml += buildAlignedRow(st.bringStr, st.endCol, true, false, false);
+        }
+        stepsHtml += buildAlignedRow(st.subStr, st.endCol, true, true, true);
+      });
+
+      const remStr = String(divInfo.finalRem);
+      const remHtml = `
+        <div class="flex items-center justify-end gap-1 pt-0.5">
+          <span class="text-[10px] font-extrabold uppercase text-amber-800 mr-1">Kalan:</span>
+          ${buildAlignedRow(remStr, totalCols - 1, true, false, false)}
+        </div>`;
+
+      return `
+        <div class="h-full w-full flex items-stretch justify-center py-0.5">
+          <div class="flex flex-col justify-between pr-2.5">
+            ${dividendHtml}
+            <div class="flex-1 flex flex-col justify-around">
+              ${stepsHtml}
+            </div>
+            ${remHtml}
+          </div>
+
+          <div class="border-l-[3px] border-slate-800 pl-2.5 flex flex-col justify-start">
+            <div class="border-b-[3px] border-slate-800 pb-1.5 mb-1.5 flex items-center gap-1">
+              ${bDigits.map((d, idx) => `<div contenteditable="true" class="math-cell ${getCellStyle(bDigits.length - 1 - idx)} text-slate-900">${d}</div>`).join('')}
+            </div>
+            <div class="text-[9px] font-extrabold uppercase text-slate-400 mb-0.5">Bölüm</div>
+            <div class="flex items-center gap-1">
+              ${qDigits.map((d, idx) => `<div contenteditable="true" class="math-cell ${getCellStyle(qDigits.length - 1 - idx)} text-amber-700 font-extrabold">${showAnswer ? d : ''}</div>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderOperationCard(q, isModel) {
+      const showAnswer = isModel || state.showAnswersOnScreen;
+
+      if (q.subId === 'mul_repeated') {
+        const terms = Array(q.a).fill(q.b).join(' + ');
+        return `<div class="space-y-1.5 text-center"><div class="math-inline-text">${terms} = <span class="text-amber-700">${showAnswer?q.ans:'__'}</span></div><div class="text-xs font-bold text-slate-600">${q.a} tane ${q.b} ➔ <span class="math-inline-text text-slate-900">${q.a} × ${q.b} = ${showAnswer?q.ans:'□'}</span></div></div>`;
+      }
+
+      if (q.subId === 'add_visual_10' || q.subId === 'sub_visual_10') {
+        const objs = q.op === 'add'
+          ? `<div class="flex items-center justify-center gap-1.5 text-base mb-1.5"><span class="px-1.5 py-0.5 bg-amber-50 rounded border border-amber-200">${'🍎'.repeat(q.a)}</span>+<span class="px-1.5 py-0.5 bg-amber-50 rounded border border-amber-200">${'🍎'.repeat(q.b)}</span></div>`
+          : `<div class="text-base mb-1.5 px-1.5 py-0.5 bg-rose-50/50 rounded border border-rose-200 inline-block">${'🍏'.repeat(q.ans)}${'<span class="opacity-30 line-through">🍏</span>'.repeat(q.b)}</div>`;
+        return `<div class="text-center">${objs}<div class="math-inline-text flex items-center justify-center gap-1.5"><span>${q.a} ${q.symbol} ${q.b} =</span><span contenteditable="true" class="math-cell border-2 border-slate-700 rounded bg-white text-amber-700">${showAnswer?q.ans:''}</span></div></div>`;
+      }
+
+      if (q.op === 'div' && state.layoutDirection === 'classic_div') {
+        return renderClassicDivisionCage(q, showAnswer);
+      }
+
+      let hideMode = 'ans';
+      if (state.questionForm === 'missing_second') hideMode = 'b';
+      else if (state.questionForm === 'missing_first') hideMode = 'a';
+      else if (state.questionForm === 'missing_mixed') hideMode = ['a','b','ans'][q.index % 3];
+
+      if (state.layoutDirection === 'horizontal' || hideMode !== 'ans') {
+        const box = (v, hide) => hide ? `<span contenteditable="true" class="math-cell border-2 border-amber-600 bg-amber-50/40 rounded mx-0.5 text-amber-800">${showAnswer?v:''}</span>` : `<span contenteditable="true">${v}</span>`;
+        return `<div class="math-inline-text flex items-center justify-center flex-wrap gap-1 py-1">${box(q.a, hideMode==='a')}<span class="text-amber-800 font-extrabold px-0.5">${q.symbol}</span>${box(q.b, hideMode==='b')}${q.c!==null?`<span>+ ${q.c}</span>`:''}<span>=</span>${box(q.ans, hideMode==='ans')}</div>`;
+      }
+
+      const isTwoDigitMul = q.op === 'mul' && String(q.b).length === 2 && q.b % 10 !== 0;
+      const p1Val = isTwoDigitMul ? q.a * (q.b % 10) : 0;
+      const p2Val = isTwoDigitMul ? q.a * Math.floor(q.b / 10) : 0;
+
+      const maxLen = Math.max(
+        String(q.a).length,
+        String(q.b).length,
+        String(q.ans).length,
+        isTwoDigitMul ? String(p2Val).length + 1 : 0
+      );
+
+      const pad = (n) => { const arr = String(n).split(''); while (arr.length < maxLen) arr.unshift(''); return arr; };
+      const aArr = pad(q.a), bArr = pad(q.b), cArr = q.c !== null ? pad(q.c) : null, ansArr = pad(q.ans);
+
+      const headerRow = state.gridStyle === 'colored' && state.perPageCount <= 12
+        ? `<div class="flex justify-end items-center gap-1 mb-0.5"><span class="w-5"></span>${Array(maxLen).fill(0).map((_,i)=>`<div class="w-[var(--q-box-size)] text-center text-[9px] font-extrabold text-slate-400 leading-none">${['B','O','Y','Bi','OB'][maxLen-1-i]||''}</div>`).join('')}</div>`
+        : '';
+
+      const carryRow = state.carryPockets && ['add','sub','mul'].includes(q.op)
+        ? `<div class="flex justify-end items-center gap-1 mb-0.5"><span class="w-5"></span>${Array(maxLen).fill(0).map(()=>`<div class="w-[var(--q-box-size)] flex justify-center"><div contenteditable="true" class="carry-pocket rounded-full border border-dashed border-amber-500 bg-white flex items-center justify-center font-bold text-amber-800"></div></div>`).join('')}</div>`
+        : '';
+
+      const renderAlignedRow = (arr, isRes = false, leftSign = '') => `
+        <div class="flex justify-end items-center gap-1 mt-0.5">
+          <span class="math-inline-text w-5 text-center font-extrabold text-amber-800 shrink-0">${leftSign}</span>
+          ${arr.map((d, i) => {
+            const colFromRight = maxLen - 1 - i;
+            const isBlank = d === '' && !isRes;
+            if (isBlank) {
+              return `<div class="math-cell opacity-0 pointer-events-none"></div>`;
+            }
+            return `
+              <div class="flex items-center">
+                <div contenteditable="true" class="math-cell ${getCellStyle(colFromRight)} ${isRes?'text-amber-700 font-extrabold':'text-slate-900'}">${isRes?(showAnswer?d:''):d}</div>
+                ${!isRes ? getTouchDotsHtml(d) : ''}
+              </div>
+            `;
+          }).join('')}
+        </div>`;
+
+      let partialMulHtml = '';
+      if (isTwoDigitMul) {
+        const p1Arr = pad(p1Val);
+        const p2Digits = String(p2Val).split('');
+        while (p2Digits.length < maxLen - 1) p2Digits.unshift('');
+        p2Digits.push('SHIFT');
+
+        const p2RowHtml = `
+          <div class="flex justify-end items-center gap-1 mt-0.5">
+            <span class="math-inline-text w-5 text-center font-extrabold text-amber-800 shrink-0">+</span>
+            ${p2Digits.map((d, i) => {
+              const colFromRight = maxLen - 1 - i;
+              if (d === 'SHIFT') {
+                return `<div class="math-cell border-2 border-dashed border-slate-400 bg-slate-200/70 text-slate-500 rounded text-xs" title="Basamak Kaydırma Boşluğu">·</div>`;
+              }
+              return `<div contenteditable="true" class="math-cell ${getCellStyle(colFromRight)} text-amber-700 font-extrabold">${showAnswer ? d : ''}</div>`;
+            }).join('')}
+          </div>`;
+
+        partialMulHtml = `
+          ${renderAlignedRow(p1Arr, true, '')}
+          ${p2RowHtml}
+          <div class="border-b-2 border-slate-800 my-1 ml-5"></div>
+        `;
+      }
+
+      return `
+        <div class="inline-flex flex-col justify-center">
+          ${headerRow}
+          ${carryRow}
+          ${renderAlignedRow(aArr, false, '')}
+          ${cArr ? renderAlignedRow(cArr, false, '') : ''}
+          ${renderAlignedRow(bArr, false, q.symbol)}
+          <div class="border-b-2 border-slate-800 my-1 ml-5"></div>
+          ${partialMulHtml}
+          ${renderAlignedRow(ansArr, true, '')}
+        </div>`;
+    }
+
+    // 2 SAYFALIK SORU ÜRETİMİ VE RENDER
+    function generateWorksheet() {
+      const totalQuestions = state.perPageCount * 2;
+      state.questions = [];
+      for (let i = 0; i < totalQuestions; i++) {
+        state.questions.push(generateSingleOperationQuestion(i));
+      }
+      computeAndApplyOptimalScale();
+      renderWorksheet();
+    }
+
+    function refreshSingleCard(idx) {
+      state.questions[idx] = generateSingleOperationQuestion(idx);
+      renderWorksheet();
+    }
+
+    function renderWorksheet() {
+      const cfg = GRID_LAYOUT_MAP[state.perPageCount] || GRID_LAYOUT_MAP[6];
+      const gridStyleStr = `grid-template-columns: repeat(${cfg.cols}, minmax(0, 1fr)); grid-template-rows: repeat(${cfg.rows}, minmax(0, 1fr));`;
+
+      const grid1 = document.getElementById('questionsGridP1');
+      const grid2 = document.getElementById('questionsGridP2');
+      grid1.setAttribute('style', gridStyleStr);
+      grid2.setAttribute('style', gridStyleStr);
+
+      const p1Questions = state.questions.slice(0, state.perPageCount);
+      const p2Questions = state.questions.slice(state.perPageCount, state.perPageCount * 2);
+
+      const isLongDiv = state.currentOp === 'div' && state.layoutDirection === 'classic_div';
+
+      const buildCardHtml = (q) => {
+        const idx = q.index;
+        const isModel = idx === 0 && state.modelFirst;
+        const inner = renderOperationCard(q, isModel);
+        const borderCls = isModel ? 'border-2 border-amber-500 bg-amber-50/40' : 'border border-slate-300 bg-white/90';
+
+        return `
+          <div id="qCard-${idx}" class="q-card relative rounded-xl ${borderCls} shadow-sm transition group">
+            ${isModel ? '<span class="absolute top-1.5 left-9 bg-amber-500 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase">Örnek Çözüm</span>' : ''}
+            <div class="flex justify-between items-center shrink-0 mb-0.5">
+              <span class="w-5 h-5 rounded-full bg-slate-800 text-white text-[10px] font-extrabold flex items-center justify-center">${idx + 1}</span>
+              <div class="no-print flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition">
+                <button onclick="speakQuestion(${idx})" class="p-0.5 rounded hover:bg-amber-100 text-xs" title="Sesli Oku">🔊</button>
+                <button onclick="toggleFocusCard(${idx})" class="p-0.5 rounded hover:bg-amber-100 text-xs" title="Odaklan">🎯</button>
+                <button onclick="refreshSingleCard(${idx})" class="p-0.5 rounded hover:bg-amber-100 text-xs" title="Bu Soruyu Değiştir">🔄</button>
+              </div>
+            </div>
+            <div class="flex-1 w-full flex ${isLongDiv ? 'items-stretch' : 'items-center'} justify-center overflow-hidden">
+              ${inner}
+            </div>
+          </div>`;
+      };
+
+      grid1.innerHTML = p1Questions.map(buildCardHtml).join('');
+      grid2.innerHTML = p2Questions.map(buildCardHtml).join('');
+    }
+
+    function speakQuestion(idx) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const q = state.questions[idx];
+      const opWords = { '+': 'artı', '-': 'eksi', '×': 'çarpı', '÷': 'bölü' };
+      const utter = new SpeechSynthesisUtterance(`${idx + 1}. soru: ${q.a} ${opWords[q.symbol]||''} ${q.b} kaç eder?`);
+      utter.lang = 'tr-TR'; utter.rate = 0.9;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function toggleFocusCard(idx) {
+      state.focusedCardId = state.focusedCardId === idx ? null : idx;
+      ['a4Page1', 'a4Page2'].forEach(id => document.getElementById(id).classList.toggle('focus-active', state.focusedCardId !== null));
+      document.querySelectorAll('.q-card').forEach((c, i) => c.classList.toggle('focused-card', i === state.focusedCardId));
+    }
+
+    // ÖĞRENCİ PROFİLİ KAYIT / YÜKLEME
+    function saveStudentProfile() {
+      const name = document.getElementById('profileNameInput').value.trim();
+      if (!name) return;
+      const profiles = JSON.parse(localStorage.getItem('ck_dortislem_profiles') || '{}');
+      profiles[name] = { ...state, questions: [] };
+      localStorage.setItem('ck_dortislem_profiles', JSON.stringify(profiles));
+      document.getElementById('profileNameInput').value = '';
+      refreshSavedProfilesDropdown();
+    }
+
+    function refreshSavedProfilesDropdown() {
+      const profiles = JSON.parse(localStorage.getItem('ck_dortislem_profiles') || '{}');
+      document.getElementById('savedProfilesSelect').innerHTML = '<option value="">-- Kayıtlı Profil Seç --</option>' +
+        Object.keys(profiles).map(k => `<option value="${k}">👤 ${k}</option>`).join('');
+    }
+
+    function loadStudentProfile(name) {
+      if (!name) return;
+      const profiles = JSON.parse(localStorage.getItem('ck_dortislem_profiles') || '{}');
+      if (!profiles[name]) return;
+      Object.assign(state, profiles[name]);
+      document.getElementById('studentNameP1').innerText = `Öğrenci Adı: ${name}`;
+      document.getElementById('studentNameP2').innerText = `Öğrenci: ${name}`;
+      syncScaffoldButtons();
+      setQuestionCount(state.perPageCount);
+    }
+
+    // HER İKİ SAYFA İÇİN AKILLI TAHTA ÇİZİM TUVALİ
+    function initDrawingCanvases() {
+      ['P1', 'P2'].forEach(suffix => {
+        const canvas = document.getElementById(`canvas${suffix}`);
+        const ctx = canvas.getContext('2d');
+        let painting = false;
+
+        canvas.width = 794;
+        canvas.height = 1123;
+
+        const getPos = (e) => {
+          const r = canvas.getBoundingClientRect();
+          const cx = e.touches ? e.touches[0].clientX : e.clientX;
+          const cy = e.touches ? e.touches[0].clientY : e.clientY;
+          const scaleX = canvas.width / r.width;
+          const scaleY = canvas.height / r.height;
+          return { x: (cx - r.left) * scaleX, y: (cy - r.top) * scaleY };
+        };
+        const start = (e) => { if (!state.drawingMode) return; painting = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); };
+        const move = (e) => {
+          if (!painting || !state.drawingMode) return;
+          e.preventDefault();
+          const p = getPos(e);
+          ctx.lineWidth = 3.5; ctx.lineCap = 'round'; ctx.strokeStyle = '#d97706';
+          ctx.lineTo(p.x, p.y); ctx.stroke();
+        };
+        const stop = () => { painting = false; };
+
+        canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move); window.addEventListener('mouseup', stop);
+        canvas.addEventListener('touchstart', start, { passive: false }); canvas.addEventListener('touchmove', move, { passive: false }); window.addEventListener('touchend', stop);
+      });
+    }
+
+    function toggleDrawingMode() {
+      state.drawingMode = !state.drawingMode;
+      document.querySelectorAll('.draw-canvas').forEach(c => c.classList.toggle('drawing-enabled', state.drawingMode));
+      document.getElementById('btnToggleDraw').className = state.drawingMode
+        ? 'px-2.5 py-1 bg-amber-500 text-white rounded-lg font-extrabold shadow'
+        : 'px-2.5 py-1 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100';
+      document.getElementById('btnClearCanvas').classList.toggle('hidden', !state.drawingMode);
+    }
+
+    function clearAllCanvases() {
+      ['canvasP1', 'canvasP2'].forEach(id => {
+        const c = document.getElementById(id);
+        c.getContext('2d').clearRect(0, 0, c.width, c.height);
+      });
+    }
+  </script>
+</body>
+</html>
