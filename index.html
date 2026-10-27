@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title>
-  </head>
-  <body>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
-<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -72,7 +59,6 @@
         ];
 
         tiles.forEach(t => {
-          // Kutu Gölgesi
           ctx.save();
           ctx.shadowColor = 'rgba(15, 23, 42, 0.12)';
           ctx.shadowBlur = 12 * s;
@@ -82,13 +68,11 @@
           ctx.fill();
           ctx.restore();
 
-          // Kutu Çerçevesi
           roundRect(t.x * s, t.y * s, 180 * s, 180 * s, 40 * s);
           ctx.lineWidth = 9 * s;
           ctx.strokeStyle = t.border;
           ctx.stroke();
 
-          // İşlem Sembolü
           ctx.fillStyle = t.text;
           ctx.font = '900 ' + Math.round(112 * s) + 'px system-ui, -apple-system, sans-serif';
           ctx.textAlign = 'center';
@@ -96,7 +80,7 @@
           ctx.fillText(t.sym, (t.x + 90) * s, (t.y + 92) * s);
         });
 
-        // 4. Orta Yıldız Rozeti (Özel Eğitim Pekiştireç Sembolü)
+        // 4. Orta Yıldız Rozeti
         ctx.save();
         ctx.shadowColor = 'rgba(15, 23, 42, 0.28)';
         ctx.shadowBlur = 14 * s;
@@ -122,14 +106,12 @@
       const icon192 = renderHDIcon(192);
       const icon512 = renderHDIcon(512);
 
-      // iPad / iPhone Ana Ekran İkonu (Apple Touch Icon)
       const appleLink = document.createElement('link');
       appleLink.rel = 'apple-touch-icon';
       appleLink.sizes = '180x180';
       appleLink.href = icon180;
       document.head.appendChild(appleLink);
 
-      // Masaüstü PNG Favicon
       const pngLink = document.createElement('link');
       pngLink.rel = 'icon';
       pngLink.type = 'image/png';
@@ -137,7 +119,6 @@
       pngLink.href = icon512;
       document.head.appendChild(pngLink);
 
-      // GitHub Pages & Masaüstü/Tablet Kurulumu İçin Web App Manifest
       const manifestData = {
         name: "Dört İşlem Çalışma Kağıdı Stüdyosu | Cüneyd Kayalı",
         short_name: "Dört İşlem",
@@ -336,11 +317,14 @@
 </head>
 <body class="h-screen flex flex-col overflow-hidden text-slate-800">
 
-  <!-- ==================== 1. BAŞLANGIÇ EKRANI (MODAL) ==================== -->
-  <div id="splashModal" class="no-print fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-[#FAF6EE] border-2 border-amber-500/40 rounded-3xl max-w-xl w-full p-7 shadow-2xl">
-      <div class="flex flex-col sm:flex-row items-center gap-5">
-        <div class="w-24 h-24 rounded-3xl bg-slate-900 p-1.5 shadow-xl shrink-0">
+  <!-- ==================== 1. KARŞILAMA VE TANITIM EKRANI (AÇILIŞTA AKTİF) ==================== -->
+  <div id="splashModal" class="no-print fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-[#FAF6EE] border-2 border-amber-500/50 rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden animate-fade-in">
+      
+      <!-- Üst Koyu Kurumsal Başlık Bandı -->
+      <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-7 text-white flex flex-col sm:flex-row items-center gap-5 border-b-4 border-amber-500">
+        <!-- Uygulama İkonu -->
+        <div class="w-24 h-24 rounded-3xl bg-slate-950 p-1.5 shadow-2xl border-2 border-amber-400/60 shrink-0">
           <svg viewBox="0 0 512 512" class="w-full h-full">
             <rect x="16" y="16" width="480" height="480" rx="96" fill="#FAF6EE" stroke="#F59E0B" stroke-width="14"/>
             <rect x="56" y="56" width="180" height="180" rx="40" fill="#FEF3C7" stroke="#D97706" stroke-width="10"/>
@@ -355,27 +339,73 @@
             <text x="256" y="270" font-size="40" font-weight="bold" text-anchor="middle" fill="#FFFFFF">★</text>
           </svg>
         </div>
-        <div class="text-center sm:text-left space-y-1.5">
-          <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-900 font-bold text-[11px] uppercase">
-            Özel Eğitim & BEP Materyal Atölyesi
+
+        <!-- Başlık ve Hazırlayan Bilgisi -->
+        <div class="text-center sm:text-left space-y-2">
+          <span class="inline-block px-3 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 font-bold text-[11px] uppercase tracking-wider">
+            Yeni Nesil Özel Eğitim Materyal Atölyesi
           </span>
-          <h1 class="text-2xl font-extrabold text-slate-900 leading-tight">
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
             Dört İşlem Çalışma Kağıdı Stüdyosu
           </h1>
-          <p class="text-xs font-bold text-amber-900 bg-amber-200/70 inline-block px-3 py-1 rounded-lg border border-amber-400/50">
-            Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı
-          </p>
-          <p class="text-xs text-slate-600 leading-relaxed pt-1">
-            53 kademeli dört işlem basamağı, A4 sayfasının tamamını dolduran dinamik ızgara motoru, aşağıya doğru uzayan uzun bölme kafesleri ve basamak kaydırmalı çarpma şablonları.
-          </p>
+          <div class="inline-flex items-center gap-2 bg-amber-500 text-slate-950 font-extrabold text-xs sm:text-sm px-3.5 py-1 rounded-xl shadow">
+            <span>✒️ Hazırlayan: Özel Eğitim Öğretmeni Cüneyd Kayalı</span>
+          </div>
         </div>
       </div>
 
-      <div class="mt-6 flex justify-end">
-        <button onclick="closeSplash()" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm rounded-xl shadow-md transition active:scale-95">
-          Stüdyoya Dön ➔
-        </button>
+      <!-- Orta Tanıtım Gövdesi -->
+      <div class="p-6 sm:p-7 space-y-5">
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+          Bu uygulama; özel eğitim ihtiyacı olan, disleksi, diskalkuli veya dikkat eksikliği yaşayan öğrencilerimizin bireyselleştirilmiş eğitim programı (<strong>BEP</strong>) hedeflerine uygun, göz yormayan ve basamak hizalı çalışma yaprakları üretmek için geliştirilmiştir.
+        </p>
+
+        <!-- 4 Temel Özellik Kartı -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-white border border-amber-200/80 shadow-sm flex items-start gap-3">
+            <span class="text-xl bg-amber-100 w-9 h-9 rounded-xl flex items-center justify-center shrink-0">🔢</span>
+            <div>
+              <div class="font-extrabold text-slate-900">53 Kademeli İşlem Basamağı</div>
+              <div class="text-slate-600 text-[11px] mt-0.5">Toplama, çıkarma, çarpma ve bölmede en temelden ileri düzeye tüm alt kazanımlar.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white border border-amber-200/80 shadow-sm flex items-start gap-3">
+            <span class="text-xl bg-emerald-100 w-9 h-9 rounded-xl flex items-center justify-center shrink-0">🔲</span>
+            <div>
+              <div class="font-extrabold text-slate-900">Özel Eğitim Görsel İskeleleri</div>
+              <div class="text-slate-600 text-[11px] mt-0.5">Renkli Y-O-B kutuları, elde yuvaları, aşağı uzayan bölme kafesi ve TouchMath noktaları.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white border border-amber-200/80 shadow-sm flex items-start gap-3">
+            <span class="text-xl bg-sky-100 w-9 h-9 rounded-xl flex items-center justify-center shrink-0">📄</span>
+            <div>
+              <div class="font-extrabold text-slate-900">Tam A4 Doluluk & 2 Sayfa Baskı</div>
+              <div class="text-slate-600 text-[11px] mt-0.5">Kaç soru seçerseniz seçin A4 kağıdını tam dolduran otomatik ölçekleme ve 2 sayfalı çıktı.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white border border-amber-200/80 shadow-sm flex items-start gap-3">
+            <span class="text-xl bg-rose-100 w-9 h-9 rounded-xl flex items-center justify-center shrink-0">✏️</span>
+            <div>
+              <div class="font-extrabold text-slate-900">Akıllı Tahta & Tablet Uyumlu</div>
+              <div class="text-slate-600 text-[11px] mt-0.5">Ekranda kalemle çizim yapabilme, sesli soru okuyucu, DEHB odak maskesi ve BEP profil kaydı.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alt Bilgi ve Başlat Butonu -->
+        <div class="pt-3 border-t border-amber-900/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span class="text-[11px] font-bold text-slate-500">
+            💡 Sol üstteki logoya tıklayarak bu tanıtım ekranına istediğiniz zaman dönebilirsiniz.
+          </span>
+          <button onclick="closeSplash()" class="w-full sm:w-auto px-7 py-3 bg-amber-600 hover:bg-amber-500 text-white font-extrabold text-sm rounded-2xl shadow-lg shadow-amber-600/25 transition active:scale-95">
+            Stüdyoyu Başlat ➔
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -383,7 +413,7 @@
   <header class="no-print bg-white border-b border-slate-200 z-30 shadow-sm shrink-0">
     <!-- Üst Satır: Marka + Sayfa Başı Soru Sayısı + Ana Butonlar -->
     <div class="px-4 py-2 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100">
-      <div class="flex items-center gap-2.5 cursor-pointer" onclick="openSplash()" title="Uygulama Bilgisi">
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="openSplash()" title="Tanıtım Ekranını Aç">
         <div class="w-9 h-9 rounded-xl bg-slate-900 p-0.5 flex items-center justify-center shadow-sm">
           <svg viewBox="0 0 512 512" class="w-full h-full">
             <rect x="16" y="16" width="480" height="480" rx="96" fill="#FAF6EE" stroke="#F59E0B" stroke-width="18"/>
